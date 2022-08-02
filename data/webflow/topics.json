@@ -1,0 +1,861 @@
+{
+  "items": [
+    {
+      "anchor-link": "https://olasmedia.com/shows/nation-state-of-play",
+      "_archived": false,
+      "_draft": false,
+      "sticky": true,
+      "apple-link": "https://olasmedia.com/shows/nation-state-of-play",
+      "spotify-link": "https://olasmedia.com/shows/nation-state-of-play",
+      "featured": true,
+      "google-link": "https://olasmedia.com/shows/nation-state-of-play",
+      "name": "Nation State of Play",
+      "description": "On each episode of Nation State of Play, we explore political stories that are driving public policy in California at the federal, state, and local level to get below the surface of the headlines, and show you the true forces shaping our nation state.",
+      "hero": {
+        "fileId": "60d3b694811789255b9ba7b1",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/60d3b694811789255b9ba7b1_Nation%20State%20of%20Play%20-%20OG.png",
+        "alt": null
+      },
+      "slug": "nation-state-of-play",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "updated-on": "2022-06-15T17:10:06.517Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2021-06-23T22:36:01.196Z",
+      "created-by": "Person_5a9ed4068796f70001001557",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "60d3b75167d1cd9bfded48d6"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "sticky": true,
+      "featured": false,
+      "name": "Behind the Curtain",
+      "description": "Public affairs podcast letting you know what is really going on in San Diego and beyond and how it impacts you. Hosted by Art Castanares of La Prensa, San Diego's Original Latino Newspaper.",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "hero": {
+        "fileId": "60426826e39851462ed02b17",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/60426826e39851462ed02b17_BTC_Logo_1200x630.png",
+        "alt": null
+      },
+      "slug": "behind-the-curtain",
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "updated-on": "2022-06-15T17:08:36.731Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2021-03-03T01:37:41.578Z",
+      "created-by": "Person_5a9ed4068796f70001001557",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "anchor-link": "https://anchor.fm/btc8",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "603ee865294be42a00a2a28b"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "featured": false,
+      "description": "A deep dives with experts and madmen into life's most interesting topics. If you're an independent-thinker, you've found your home. Not right, not left, just real.",
+      "name": "Independent Riot",
+      "hero": {
+        "fileId": "601dbfda28531184b7f5cd5d",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/601dbfda28531184b7f5cd5d_0204_IVN_TIRPodcast_1200x630.jpg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "slug": "independent-riot",
+      "updated-on": "2022-06-15T17:07:24.670Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2021-01-26T22:18:13.939Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "youtube-link": "https://www.youtube.com/channel/UCFvYoKoVqYQNvXuix7PnsbQ/videos",
+      "google-link": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xNTk5NzkwLnJzcw==",
+      "spotify-link": "https://open.spotify.com/show/7qgtQwz0SukAOERnTnmqYP",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "sticky": false,
+      "apple-link": "https://podcasts.apple.com/podcast/id1548164685",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "60109525d9c7d7fd4fa79a82"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "featured": false,
+      "description": "An experience inviting unique points of view, ideas, and opinions to facilitate a rich conversation. Driven by Jeff Marston, this solution-oriented cast hopes to create an impact of action and implementation in San Diego and beyond.",
+      "name": "The Extra Point with Jeff Marston",
+      "hero": {
+        "fileId": "601038513f0df269c55de91b",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/601038513f0df269c55de91b_TEP_hero_1200x630.jpg",
+        "alt": null
+      },
+      "slug": "the-extra-point-with-jeff-marston",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "updated-on": "2022-06-15T17:07:30.462Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2021-01-26T15:42:42.909Z",
+      "created-by": "Collaborator_5f2881fa571d2aa607a34351",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "anchor-link": "https://anchor.fm/jeffmarston",
+      "sticky": true,
+      "spotify-link": "https://open.spotify.com/show/4LKhiLMdJtmy5q4r8pYWVa",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "601038724059a8e2e0881ded"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "featured": false,
+      "description": "The Entrepreneur’s Guide to the Galaxy. Hosted by entrepreneurs Neil Senturia and Barbara Bry. This podcast, produced in San Diego, California, focuses on innovation, entrepreneurship, finance and business.",
+      "name": "I'm There for You, Baby!",
+      "hero": {
+        "fileId": "60108cc940dd4eceeabd821e",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/60108cc940dd4eceeabd821e_ITFYB_optimized.png",
+        "alt": null
+      },
+      "slug": "im-there-for-you-baby",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "updated-on": "2022-06-15T17:07:34.467Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2021-01-26T15:24:42.311Z",
+      "created-by": "Collaborator_5f2881fa571d2aa607a34351",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "anchor-link": "https://anchor.fm/itfyb",
+      "sticky": true,
+      "spotify-link": "https://open.spotify.com/show/7J1dNMaazjBUiiBTxSBwVi",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "6010343ab1685c8711dc60ba"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "\"The Extra Point with Jeff Marston\" is aired weekly on Mightier 1090 from 6 p.m. to 7 p.m. Wednesday.",
+      "name": "The Extra Point",
+      "hero": {
+        "fileId": "5f5a4a775ca26c659e128f5f",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f5a4a775ca26c659e128f5f_extra-point-og.png",
+        "alt": null
+      },
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "slug": "the-extra-point",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368",
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "updated-on": "2021-02-23T20:06:56.682Z",
+      "updated-by": "Person_5a9ed4068796f70001001557",
+      "created-on": "2020-09-10T15:47:38.291Z",
+      "created-by": "Person_5aba858c60e60012c4d044f0",
+      "published-on": "2021-02-23T20:06:56.682Z",
+      "published-by": "Person_5a9ed4068796f70001001557",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f5a4a9a029f2fb34de9a85d"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "The latest news on the 2020 Election with an independent perspective.",
+      "name": "Election 2020",
+      "icon": {
+        "fileId": "5f3adc8f6633dd1a461731b4",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f3adc8f6633dd1a461731b4_ivnsd-topic-icon-7.svg",
+        "alt": null
+      },
+      "hero": {
+        "fileId": "5f3adbfbab7e54df0c99903a",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f3adbfbab7e54df0c99903a_elections-2020.jpeg",
+        "alt": null
+      },
+      "slug": "election-2020",
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "updated-on": "2020-09-24T18:06:05.481Z",
+      "updated-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "created-on": "2020-08-17T19:40:41.339Z",
+      "created-by": "Person_5aba858c60e60012c4d044f0",
+      "published-on": "2020-09-24T18:10:24.545Z",
+      "published-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f3add397a46af2b2c328b87"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Get the latest updates from an independent perspective on Social Equity in San Diego.",
+      "name": "Social Equity",
+      "icon": {
+        "fileId": "5f28a2dd9db7353fdb531587",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f28a2dd9db7353fdb531587_ivnsd-topic-icon-6_ivnsd-topic-icon-6.svg",
+        "alt": null
+      },
+      "hero": {
+        "fileId": "5f289f11e1a34506ca741b58",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f289f11e1a34506ca741b58_social-equity-og.jpg",
+        "alt": null
+      },
+      "slug": "social-equity",
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "updated-on": "2020-12-02T19:55:01.000Z",
+      "updated-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "created-on": "2020-08-03T23:50:58.990Z",
+      "created-by": "Person_5aba858c60e60012c4d044f0",
+      "published-on": "2020-12-02T19:55:08.970Z",
+      "published-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "sided-2": "did-the-state-of-california-violate-constitutional-rights-when-it-closed-schools",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f28a2e27259a45e177ac5b6"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Share your opinion on the issues most affecting San Diegans. Join the discussion and share your independent perspective.",
+      "name": "Open Discussion",
+      "slug": "open-discussion",
+      "updated-on": "2020-07-30T23:47:16.381Z",
+      "updated-by": "Person_5aba858c60e60012c4d044f0",
+      "created-on": "2020-07-29T17:52:33.387Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2020-07-31T17:34:59.536Z",
+      "published-by": "Collaborator_5d4330eed5bffdee4723e810",
+      "icon": {
+        "fileId": "5f235747a79a461c47cdd0ad",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f235747a79a461c47cdd0ad_ivnsd-topic-icon-5.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "hero": {
+        "fileId": "5f2359d60544bd17aac0c04e",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f2359d60544bd17aac0c04e_open-discussion-og.jpg",
+        "alt": null
+      },
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f21b761135dbc61fe380dfe"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent authors give the latest economy news and analysis through a nonpartisan lens.",
+      "name": "New Economy",
+      "slug": "new-economy",
+      "updated-on": "2020-12-02T19:47:00.242Z",
+      "updated-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "created-on": "2020-07-29T17:51:50.286Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2020-12-02T19:55:08.970Z",
+      "published-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "icon": {
+        "fileId": "5f23575e1fb51921cb4db786",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f23575e1fb51921cb4db786_ivnsd-topic-icon-3.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "hero": {
+        "fileId": "5f2359ca49ec63383aca8888",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f2359ca49ec63383aca8888_new-economy-og.jpeg",
+        "alt": null
+      },
+      "sided-2": "can-the-city-of-san-diego-depend-on-the-federal-government-to-pass-another-stimulus-bill",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f21b7362ee6dc41bf2cd709"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Nonpartisan news and updates on legislative, legal, and grassroots efforts to reform San Diego elections.",
+      "name": "Election Reform",
+      "slug": "election-reform",
+      "updated-on": "2021-01-26T20:13:59.581Z",
+      "updated-by": "Person_5aba858c60e60012c4d044f0",
+      "created-on": "2020-07-29T17:49:56.469Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2021-01-26T20:58:30.109Z",
+      "published-by": "Collaborator_5d09682806d04c6b7810a250",
+      "icon": {
+        "fileId": "5f2357a16fc9da335e7306b4",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f2357a16fc9da335e7306b4_ivnsd-topic-icon-2.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "hero": {
+        "fileId": "5f2359b5be075e54f5e50a4b",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f2359b5be075e54f5e50a4b_election-reform-og.jpeg",
+        "alt": null
+      },
+      "sided-2": "what-kind-of-election-reform-measures-would-you-like-to-see-in-san-diego",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f21b6c411fc00113d4003c5"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "From safety to development, get the latest news on San Diego's neighborhoods.",
+      "name": "Neighborhoods",
+      "slug": "neighborhoods",
+      "updated-on": "2020-12-03T22:11:48.445Z",
+      "updated-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "created-on": "2020-07-29T17:49:13.884Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2020-12-03T22:11:48.445Z",
+      "published-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "icon": {
+        "fileId": "5f235774a199f82ad311f970",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f235774a199f82ad311f970_ivnsd-topic-icon-4.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "hero": {
+        "fileId": "5f235990b9449ea2520b20d8",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f235990b9449ea2520b20d8_neighborhoods-tile-og.png",
+        "alt": null
+      },
+      "sided-2": "should-san-diego-eliminate-single-family-zoning-1",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f21b69908a9b77d28c3e68e"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Get the latest updates from an independent perspective on homelessness in San Diego.",
+      "name": "Homelessness",
+      "slug": "homelessness",
+      "updated-on": "2020-12-03T22:09:53.514Z",
+      "updated-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "created-on": "2020-07-29T17:48:37.762Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2020-12-03T22:09:53.514Z",
+      "published-by": "Collaborator_5f5919c48eb8a733d2948bb0",
+      "icon": {
+        "fileId": "5f2357b1dc21fdb485d828f2",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f2357b1dc21fdb485d828f2_ivnsd-topic-icon-1.svg",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad4701525b5a7e98cae8"
+      ],
+      "hero": {
+        "fileId": "5f23597a7978678f82c6d1b0",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5f23597a7978678f82c6d1b0_homelessness-og.jpeg",
+        "alt": null
+      },
+      "sided-2": "how-do-we-improve-san-diego-s-homelessness-problem-2",
+      "featured": false,
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5f21b6758f2214b8fbabbb5e"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "name": "The Fulcrum",
+      "slug": "the-fulcrum",
+      "updated-on": "2020-07-30T00:14:24.071Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2020-01-31T17:42:35.466Z",
+      "created-by": "Collaborator_5daf2cc79388f5a009db5758",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "description": "The Fulcrum is a nonprofit and nonpartisan news organization focused exclusively on efforts to reverse the dysfunctions plaguing American democracy.",
+      "icon": {
+        "fileId": "5e3aedd96da3c60089e2b24a",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5e3aedd96da3c60089e2b24a_Fulcrum_logo.png",
+        "alt": null
+      },
+      "hero": {
+        "fileId": "5e3aedd96da3c60089e2b24a",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5e3aedd96da3c60089e2b24a_Fulcrum_logo.png",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5e34670b78b3337cb48c0900"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "The National Association of Nonpartisan Reformers produces a monthly podcast featuring reform leaders (primarily members of the Association) and their current projects, campaigns and updates. It will provide focus and attention to key electoral reforms its members are tackling.",
+      "name": "How to Win Friends and Save the Republic",
+      "hero": {
+        "fileId": "60ef532f290a96321ad57820",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/60ef532f290a96321ad57820_NANR_Podcast_Image_1200x630_Black.png",
+        "alt": null
+      },
+      "slug": "how-to-win-friends-and-save-the-republic",
+      "updated-on": "2022-06-15T17:11:20.260Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2019-08-22T00:37:03.126Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "featured": true,
+      "anchor-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "breaker-link": "https://www.breaker.audio/unrig-it",
+      "google-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "pocket-casts-link": "https://pca.st/d10xb8jo",
+      "radiopublic-link": "https://radiopublic.com/how-to-win-friends-and-save-the-r-6Vb1Xl",
+      "spotify-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "apple-link": "https://podcasts.apple.com/us/podcast/how-to-win-friends-and-save-the-republic/id1553577008",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d5de3af264cc40251ffcb40"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Awarding-winning journalist Jeff Powers brings you the latest nonpartisan political news and updates from San Diego, California. ",
+      "name": "Powers' Podcast",
+      "slug": "powers-podcast",
+      "updated-on": "2020-07-30T00:14:41.564Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-07-15T20:31:35.573Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "hero": {
+        "fileId": "5d2cf85d93c8d0b0274f7eb5",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d2cf85d93c8d0b0274f7eb5_pow-pod-og-dark-no-logo-krl-2019.png",
+        "alt": null
+      },
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d2ce2a7a0329afa5cff5f41"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "\"Deconstructed\" with our Principal Political Analyst TJ O'Hara breaks down important political issues with outstanding guests from across the political spectrum so you can form your own more informed opinion. ",
+      "name": "Deconstructed",
+      "slug": "deconstructed",
+      "hero": {
+        "fileId": "5d12b36fd61ed3ff7435845a",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d12b36fd61ed3ff7435845a_Deconstructed-OG-2.png",
+        "alt": null
+      },
+      "updated-on": "2022-06-15T17:08:12.343Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2019-07-15T20:23:33.930Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "featured": true,
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "sticky": false,
+      "anchor-link": "https://anchor.fm/deconstructed4",
+      "breaker-link": "https://www.breaker.audio/deconstructed-1",
+      "google-link": "https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy80YWY4OTIwYy9wb2RjYXN0L3Jzcw==",
+      "pocket-casts-link": "https://pca.st/8q3ggx4y",
+      "radiopublic-link": "https://radiopublic.com/deconstructed-GAAyno",
+      "spotify-link": "https://open.spotify.com/show/3pKQrZZQZa0YzoHWz0UMhk",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d2ce0c5f78622b72b20e891"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Tired of a rigged political system? IVN Editor Shawn Griffiths follows the historic movement to give power to all voters, including at the ballot box and in the court room, including exclusive interviews with election reform leaders across the nation.",
+      "name": "Toppling The Duopoly",
+      "slug": "toppling-the-duopoly",
+      "hero": {
+        "fileId": "5d0d540b2e625b7384a9e8af",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d540b2e625b7384a9e8af_ivn_toppling_the_duopoly_w_shawn_fb_og_01292019-sma.png",
+        "alt": null
+      },
+      "updated-on": "2022-06-15T17:10:57.935Z",
+      "updated-by": "Person_560b1668ecc4f1204e2dc704",
+      "created-on": "2019-07-15T20:19:08.033Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2022-06-15T17:11:28.940Z",
+      "published-by": "Person_560b1668ecc4f1204e2dc704",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "featured": true,
+      "icon": {
+        "fileId": "5c940b23770f518e6f8ee4ae",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5c940b23770f518e6f8ee4ae_icon-podcast.svg",
+        "alt": null
+      },
+      "breaker-link": "https://www.breaker.audio/toppling-the-duopoly",
+      "google-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "pocket-casts-link": "https://pca.st/nbocj3bh",
+      "radiopublic-link": "https://radiopublic.com/toppling-the-duopoly-8XVZnj",
+      "spotify-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "anchor-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "sticky": true,
+      "apple-link": "https://olasmedia.com/shows/how-to-win-friends-and-save-the-republic",
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d2cdfbcf786224ea62087b7"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent news, information, and analysis on emerging alternative voting methods to replace the choose-one voting method used in most US jurisdictions and give voters more choice at the ballot box, including ranked choice voting, approval voting, STAR voting, and more. ",
+      "name": "New Voting Methods",
+      "slug": "new-voting-methods",
+      "updated-on": "2020-07-30T00:15:02.112Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-07-08T19:59:41.191Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d23a0ad1788ac673429da11"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Nonpartisan updates and information on term limit legislation, proposals, and campaigns. Term limits are supported by roughly 86% of American voters. ",
+      "name": "Term Limits",
+      "slug": "term-limits",
+      "hero": {
+        "fileId": "5d1257b4a84505bc53fe68d0",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d1257b4a84505bc53fe68d0_shutterstock_113389501.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:07.571Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-25T18:26:38.649Z",
+      "created-by": "Collaborator_5d09682806d04c6b7810a250",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d12675e1d41bdf7c3bee940"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent coverage of issues related to education policy, include the size and power of the Department of Education, local control over curriculum, federal student loan programs, and the role of religion and the sciences in the classroom.",
+      "name": "Education",
+      "slug": "education",
+      "hero": {
+        "fileId": "5d0d604c2e625b1966acaa5c",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d604c2e625b1966acaa5c_two-sides-us-education-policy-according-parties-76410.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:13.228Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T22:55:13.783Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d6051735e7f3ed4726920"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent news and information on important legislation. From immigration reform to appropriations bills to new energy regulations, we take an in-depth look at the most important bills on the national, state, and local levels that will have a lasting impact on voters.",
+      "name": "Legislation",
+      "slug": "legislation",
+      "hero": {
+        "fileId": "5d0d43a3cd30855bf2a50838",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d43a3cd30855bf2a50838_republican-democrat-behavior-makes-best-argument-limited-government-95728.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:19.322Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T20:53:01.847Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d43ad2118706969671747"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent authors cover news and developments related to the economic health of the country, states and individual citizens. Here we cover the stock market, business regulations, international trade, budgets, and other issues affecting American businesses.",
+      "name": "Economy",
+      "hero": {
+        "fileId": "5d0d3a3ecfa0a2f742bde932",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d3a3ecfa0a2f742bde932_political-art-fear-mongering-fundraising-75768-960x540.jpg",
+        "alt": null
+      },
+      "slug": "economy",
+      "updated-on": "2020-07-30T00:15:26.908Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T20:13:03.277Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d3a4f1b9518b15692cc9f"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "The latest independent news and updates on issues and policy proposals that affect voters in San Diego.",
+      "name": "San Diego",
+      "slug": "san-diego",
+      "hero": {
+        "fileId": "5d0d3855a07cdafafe3b5780",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d3855a07cdafafe3b5780_state-appeals-court-city-san-diego-pay-10139.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:32.085Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T20:04:42.280Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d385a1b95181a8c9149de"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent coverage of important political campaigns and elections throughout the United States; Congressional, Presidential, State, and Local. Find out how certain elections affect people from an independent-minded perspective.",
+      "name": "Campaigns",
+      "slug": "campaigns",
+      "hero": {
+        "fileId": "5d2521e0236a8f30822b955d",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d2521e0236a8f30822b955d_shutterstock_676447282.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:38.593Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T19:58:20.448Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d36dca07cda96643a8d51"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent news and information on electoral redistricting across the country, including grassroots campaigns, legislation, and litigation to combat partisan gerrymandering.",
+      "name": "Gerrymandering",
+      "hero": {
+        "fileId": "5d0d35f9cfa0a294efbb18c0",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d35f9cfa0a294efbb18c0_Adams_Gerrymandering_Photo4.jpg",
+        "alt": null
+      },
+      "slug": "gerrymandering",
+      "updated-on": "2020-07-30T00:15:44.195Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T19:54:42.339Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d3602cfa0a24575bb1f7e"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent analysis and news on recent public opinion polls and surveys that impact the discussion on a variety of topics, from domestic and foreign affairs to campaigns, as well as decide who gets to appear on the public stage.",
+      "name": "Public Opinion",
+      "hero": {
+        "fileId": "5d0d2f0b9ccb3c23e6db7a34",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d2f0b9ccb3c23e6db7a34_nicholas-green-324622-unsplash%20(1).jpg",
+        "alt": null
+      },
+      "slug": "public-opinion-polls",
+      "updated-on": "2020-07-30T00:15:49.248Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T19:28:10.372Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d2fca0d07ae1b248dfccb"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent news and information on political debates. Discussions include how the debates are rigged, who decides who makes it into the presidential debates, and what organizations are opening the debates.",
+      "name": "Debates",
+      "slug": "debates",
+      "hero": {
+        "fileId": "5d0d13741d8a8be3577a7b29",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d13741d8a8be3577a7b29_makeamericadebateagain-stronger-healthier-republic-requires-open-debates-63956.png",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:15:57.071Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T17:34:52.313Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d153c39160a2289ec053a"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Independent authors share their opinion on a wide range of topics, from political commentary to less politicized issues that are relevant to the discussion. Articles in this category express the opinions of our contributors, not IVN as a whole.",
+      "name": "Opinion",
+      "slug": "opinion",
+      "hero": {
+        "fileId": "5d0d0df339160a85b1ea615d",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d0d0df339160a85b1ea615d_Copy%20of%20alexis-brown-85793-unsplash.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:16:02.017Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-06-21T17:03:55.831Z",
+      "created-by": "Collaborator_5d09672ab9278b65c945339a",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5d0d0dfb2be7835ae576a5cc"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "description": "Nonpartisan news and updates on legislative, legal, and grassroots efforts to open primary elections nationwide.",
+      "name": "Open Primaries",
+      "slug": "openprimaries",
+      "hero": {
+        "fileId": "5d39df375b76f527fbd902f3",
+        "url": "https://uploads-ssl.webflow.com/5c9122ca5f4904b8a2728554/5d39df375b76f527fbd902f3_5d07dc1eb8c1666dafffa5f6_shutterstock_1224171904.jpg",
+        "alt": null
+      },
+      "updated-on": "2020-07-30T00:16:07.044Z",
+      "updated-by": "Person_54934e54cf53f46368ac9fad",
+      "created-on": "2019-03-19T20:43:29.441Z",
+      "created-by": "Person_54934e54cf53f46368ac9fad",
+      "published-on": "2020-07-30T02:10:42.720Z",
+      "published-by": "Person_54934e54cf53f46368ac9fad",
+      "franchise-2": [
+        "5f21ad17d5609a0133340368"
+      ],
+      "sticky": false,
+      "_cid": "5c9123803663b99ae86628e8",
+      "_id": "5c9154719c35277a3807d8ae"
+    }
+  ],
+  "count": 30,
+  "limit": 100,
+  "offset": 0,
+  "total": 30
+}

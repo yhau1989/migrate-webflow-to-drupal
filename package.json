@@ -1,0 +1,31 @@
+{
+  "name": "migrate-webflow-to-drupal",
+  "version": "1.0.0",
+  "description": "Migrate Data from Webflow to Drupal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhau1989/migrate-webflow-to-drupal.git"
+  },
+  "keywords": [
+    "drupal",
+    "javascript",
+    "webflow"
+  ],
+  "author": "Samuel Pilay Muñoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yhau1989/migrate-webflow-to-drupal/issues"
+  },
+  "homepage": "https://github.com/yhau1989/migrate-webflow-to-drupal#readme",
+  "dependencies": {
+    "array-paginate": "^1.0.2",
+    "axios": "^0.19.2",
+    "btoa": "^1.2.1",
+    "drupal-jsonapi-client": "^3.1.0",
+    "html-to-text": "^8.2.1"
+  }
+}
