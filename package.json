@@ -23,9 +23,11 @@
   "homepage": "https://github.com/yhau1989/migrate-webflow-to-drupal#readme",
   "dependencies": {
     "array-paginate": "^1.0.2",
-    "axios": "^0.19.2",
+    "axios": "^0.27.2",
     "btoa": "^1.2.1",
-    "drupal-jsonapi-client": "^3.1.0",
-    "html-to-text": "^8.2.1"
+    "drupal-jsonapi-client": "git+https://github.com/Desarol/drupal-jsonapi-client.git#4.1.x",
+    "got": "^11.8.5",
+    "html-to-text": "^8.2.1",
+    "jsdom": "^20.0.0"
   }
 }
