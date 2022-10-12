@@ -1,7 +1,7 @@
 const btoa = require("btoa");
 const urlApi = "https://dev-ivn.pantheonsite.io/";
 const b64User = btoa("API:5CpEjbcwXCJ3e8f");
-// const b64User = btoa("Samuel Pilay Muñoz:mbigdZGuVU5La8v");
+//  const b64User = btoa("Samuel Pilay Muñoz:mbigdZGuVU5La8v");
 
 
 const configHeader = {

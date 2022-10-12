@@ -10,8 +10,6 @@ const rowsPerPage = 50;
 const totalsPages = arrayPaginate(items, 1, rowsPerPage).totalPages;
 let datas = {};
 
-// console.log('items: ', items.length);
-
 async function createUsersDrupal() {
   let currentPage = 1;
   let result = [];
@@ -40,7 +38,6 @@ const runCreations = async (_dataUsers) => {
   if (runData.error == 0) {
     // console.log(runData.values);
     return runData.values;
-    
   }
   return [];
 };
@@ -52,7 +49,7 @@ const createBodyUserDrupal = (itemWebFlow) => {
       type: "user--user",
       attributes: {
         mail: itemWebFlow["social-email-new"] || "",
-        name: itemWebFlow.name.replace(/[^0-9a-z-A-Z ]/g, "").replace(/ +/, "").replace("  ", " ").trim(),
+        name: ` ${itemWebFlow.name}`.replace(/[^0-9a-z-A-Z ]/g, "").replace(/ +/, "").split(" ").filter(c => c.length > 0).join(" "),
         pass: "123456",
         status: true,
         field_bio: {
@@ -92,24 +89,41 @@ const saveLogUsersDrupal = (data) => {
   });
 };
 
-const deleteUsers = async() => {
+const deleteUsersDrupal = async() => {
   const usersDrupal = JSON.parse(
-    fs.readFileSync("../../data/webflow/users.json", "utf8")
+    fs.readFileSync("../../data/drupal/Users/UsersDrupal.json", "utf8")
   );
-  const users = usersDrupal.data;
-  const contentEditorUsers = users.filter(user => {
-    return user.id != "0831f49b-dba3-4295-b146-b6cdbcbcd02a" && user.id != "631689f5-1e1d-4b7c-8194-36870d194610" && user.id != "8b8dc158-b899-417a-952d-c8dca6bc0943"
+
+  const contentEditorUsers = usersDrupal.filter(user => {
+    return user.drupalUser.data.id != "0831f49b-dba3-4295-b146-b6cdbcbcd02a" && user.drupalUser.data.id != "631689f5-1e1d-4b7c-8194-36870d194610" && user.drupalUser.data.id != "8b8dc158-b899-417a-952d-c8dca6bc0943" && user.drupalUser.data.id != "510a094a-3364-4015-b6b1-66319ccafd47"
   })
 
-  const usersRequest = contentEditorUsers.map(userRequest => services.deleteUser(userRequest.id))
+  const usersRequest = contentEditorUsers.map(userRequest => services.deleteUser(userRequest.drupalUser.data.id))
   
-  await Promise.all(usersRequest)
+  const eliminados = await Promise.all(usersRequest)
     .then((values) => ({ error: 0, values }))
     .catch((reason) => {
       console.log("reason: ", reason);
       return { error: 1, reason };
     });
+
+
+  console.log(eliminados);
 }
 
 createUsersDrupal();
-//deleteUsers();
+//deleteUsersDrupal();
+
+
+
+
+// usersWebFlow.items.forEach((element) => { 
+//   console.log(` ${element.name}`.replace(/[^0-9a-z-A-Z ]/g, "").replace(/ +/, "").split(" ").filter(c => c.length > 0).join(" "));
+// })
+
+
+// const usersDrupal = JSON.parse(
+//   fs.readFileSync("../../data/drupal/Users/UsersDrupal.json", "utf8")
+// );
+
+// console.log(usersDrupal[0].drupalUser.data.id)

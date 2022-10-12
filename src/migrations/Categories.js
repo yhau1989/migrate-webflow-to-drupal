@@ -10,8 +10,6 @@ const rowsPerPage = 50;
 const totalsPages = arrayPaginate(items, 1, rowsPerPage).totalPages;
 let datas = {};
 
-// console.log('items: ', items.length);
-
 async function createCategorieDrupal() {
   let currentPage = 1;
   let result = [];

@@ -1,7 +1,7 @@
-const gotServices = require(".gotServices");
+const gotServices = require("./gotServices");
 const { FileResource, Resource } = require("drupal-jsonapi-client");
 
-const uploadImgDrupal = async (bufferImge, imageName) => {
+const uploadImgDrupal = async (bufferImge, imageName, altDescription) => {
     const response1 = await gotServices.send(
       FileResource.New({
         type: "media--image",
@@ -23,6 +23,9 @@ const uploadImgDrupal = async (bufferImge, imageName) => {
               data: {
                 type: "file--file",
                 id: JSON.parse(response1.body).data.id,
+                meta: {
+                  alt: altDescription || ""
+                }
               },
             },
           },
@@ -37,6 +40,11 @@ const uploadImgDrupal = async (bufferImge, imageName) => {
       idR2: JSON.parse(response2.body).data.id,
     };
   };
+
+
+
+
+
 
   module.exports = {
     uploadImgDrupal,

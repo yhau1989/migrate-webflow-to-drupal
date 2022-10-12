@@ -1,5 +1,5 @@
 const fs = require("fs");
-const services = require("../../services/postServices");
+const services = require("../../services/webflowServices");
 
 const limitPerPage = 100;
 const fullData = [];

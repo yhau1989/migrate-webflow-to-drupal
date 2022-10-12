@@ -4,29 +4,389 @@ const drupalServices = require("../services/drupalFilesServices");
 const { fileExt } = require("../libs/utils");
 const { JSDOM } = jsdom;
 
+const fillHtmlContentImages = async (html_content, idArticle, media = null) => {
 
-const fillHtmlContentImages = async (html_content, idArticle) => {
-  const { document } = new JSDOM(`...`).window;
-  const articleBoby = document.createElement("div");
-  articleBoby.innerHTML = html_content;
-  const listFigures = articleBoby.getElementsByTagName("figure");
 
-  for (let index = 0; index < listFigures.length; index++) {
-    const figure = listFigures[index];
-    const img = figure.firstElementChild.firstChild;
-    const imgName = `${idArticle}_${index}${fileExt(img.src)}`;
-    const imgBuffer = await webflowServices.downloadWebflowUrlImgBuffer(img.src);
-    const statusUpload = await drupalServices.uploadImgDrupal(imgBuffer, imgName);
+  let stats = {}
 
-    if (statusUpload.r1 == 201 && statusUpload.r2 == 201) {
-      img.src = `/sites/default/files/2022-08/${imgName}`;
+  try {
+    const { document } = new JSDOM(`...`).window;
+    const articleBoby = document.createElement("div");
+    articleBoby.innerHTML = html_content;
+    if (media) {
+      const videoProviders = ["YouTube", "Vimeo", "Facebook"];
+      const iframeContent = document.createElement("div");
+      iframeContent.innerHTML = generateIframe(media);
+      if (videoProviders.includes(media.metadata.provider_name)) {
+        articleBoby.append(iframeContent);
+      } else {
+        articleBoby.prepend(iframeContent);
+      }
+    }
+
+    const listFigures = articleBoby.getElementsByTagName("figure");
+
+    for (let index = 0; index < listFigures.length; index++) {
+      const figure = listFigures[index];
+      const figureImages = figure.getElementsByTagName("img");
+      if(figureImages.length > 0)
+      {
+        const img = figure.getElementsByTagName("img")[0];
+        const imgName = `image_content_${idArticle}_${index}${fileExt(img.src)}`;
+
+        let imgBuffer = {
+          error: 0,
+          img: null,
+        };
+
+        try {
+          imgBuffer.img = await webflowServices.downloadWebflowUrlImgBuffer(
+            img.src
+          );
+        } catch (error) {
+          // error 404 images dont not exists
+          imgBuffer = {
+            error: 1,
+            img: null,
+            error,
+          };
+        }
+
+        if(imgBuffer.error == 0)
+        {
+          const statusUpload = await drupalServices.uploadImgDrupal(
+            imgBuffer.img,
+            imgName
+          );
+    
+          if (statusUpload.r1 == 201 && statusUpload.r2 == 201) {
+            img.src = `/sites/default/files/2022-08/${imgName}`;
+          }
+        }
+      }
+    }
+     
+    stats = {
+      error: 0,
+      html: articleBoby.outerHTML
+    }
+
+  } catch (error_) {
+    console.error('fillHtmlContentImages: ', { idArticle, error: error_ });
+    stats = {
+      error: 1,
+      html: null,
+      errorDetail: error_
     }
   }
 
-  return articleBoby.outerHTML;
+  return stats;
+
 };
-;
+
+const generateIframe = (mediaObject) => {
+  let iframe = "";
+  try {
+    iframe =
+      mediaIfamesProviders[mediaObject.metadata.provider_name](mediaObject);
+  } catch (error) {
+    console.error("generateIframe: ", error);
+  }
+  return iframe;
+};
+
+const geSrcFromIframe = (mediaMetadaData) => {
+  const { document } = new JSDOM(`...`).window;
+  const mediaIframe = document.createElement("div");
+  mediaIframe.innerHTML = mediaMetadaData.html;
+  const url = document.getElementsByTagName("iframe")[0].getAttribute("src");
+  return url.includes("https:") ? url : `https:${url}`;
+};
+
+const podcastIframe = ({ url, metadata }) => {
+  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
+      src="${url}" title="${metadata.title}"></iframe></div>`;
+};
+
+const podcastAnchorIframe = ({ url, metadata }) => {
+  const urlEmbed = url.replace("/episodes/", "/embed/episodes/");
+  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
+      src="${urlEmbed}" title="${metadata.title}"></iframe></div>`;
+};
+
+const podcastOmnyIframe = ({ url, metadata }) => {
+  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
+      src="${url}/embed" title="${metadata.title}"></iframe></div>`;
+};
+
+const podcastBuzzsproutIframe = ({ metadata }) => {
+  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" height="200" scrolling="no"
+      src="${geSrcFromIframe(metadata)}" title="${
+    metadata.title
+  }"></iframe></div>`;
+};
+
+const podcastSimplecastIframe = ({ metadata }) => {
+  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
+      src="${geSrcFromIframe(metadata)}" title="${
+    metadata.title
+  }"></iframe></div>`;
+};
+
+const facebookVideoIframe = ({ url }) => {
+  return `<div style="margin:20px 0px 20px 0px; text-align:center;">
+  <iframe
+      src="https://www.facebook.com/plugins/video.php?height=314&href=${encodeURI(
+        url
+      )}&show_text=false&width=560&t=0"
+      width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+      allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      allowFullScreen="true"></iframe>
+</div>`;
+};
+
+const vimeoIframe = ({ url }) => {
+  const urlEdit = url.replace("vimeo.com", "player.vimeo.com/video");
+  return `<div style="margin:20px 0px 20px 0px; padding:56.25% 0 0 0;position:relative;"><iframe
+  src="${urlEdit}?h=ef9cf7089c"
+  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>`;
+};
+
+const youtubeIframe = ({ url }) => {
+  const urlEdit = url.replace("watch?v=", "embed/");
+  return `<div style="margin:20px 0px 20px 0px; position:relative;padding-top:56.25%;">
+            <iframe allowfullscreen="" frameborder="0" src="${urlEdit}" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`;
+};
+
+const mediaIfamesProviders = {
+  "Omny Studio": podcastOmnyIframe,
+  "Anchor FM Inc.": podcastAnchorIframe,
+  YouTube: youtubeIframe,
+  Buzzsprout: podcastBuzzsproutIframe,
+  // 'Simplecast': podcastSimplecastIframe,
+  Vimeo: vimeoIframe,
+  Facebook: facebookVideoIframe,
+};
 
 module.exports = {
   fillHtmlContentImages,
 };
+
+const html = `<p>One issue that must be addressed soon is the federal debt ceiling, which will be reinstated on March 2, 2019 at
+around $22 trillion. At that point, the Treasury Department will begin using accounting tools at their disposal,
+called “extraordinary measures,” to avoid defaulting on the government’s obligations. However, the Congressional
+Budget Office (CBO) estimates that these measures will be exhausted near the end of this fiscal year or early
+next fiscal year (e.g., likely September or October). At that point, absent a new agreement to either raise or
+suspend the debt ceiling, the Treasury will be unable to continue paying the nation’s bills.</p>
+<h2><strong>What is the debt ceiling?</strong></h2>
+<p>The debt ceiling is the legal limit on the total amount of federal debt the government can accrue. The limit
+applies to almost all federal debt, including the roughly $16.2 trillion of debt held by the public and the
+roughly $5.9 trillion the government owes itself as a result of borrowing from various government accounts, like
+the Social Security and Medicare trust funds. As a result, the debt continues to rise, due to both annual budget
+deficits financed by borrowing from the public and from trust fund surpluses, which are invested in Treasury
+bills with the promise to be repaid later with interest.</p>
+<h2><strong>When was the debt ceiling established?</strong></h2>
+<p>Prior to establishing the debt ceiling, Congress was required to approve each issuance of debt in a separate
+piece of legislation. The debt ceiling was first enacted in 1917 through the Second Liberty Bond Act and was set
+at $11.5 billion to simplify the process and enhance borrowing flexibility. In 1939, Congress created the first
+aggregate debt limit covering nearly all government debt and set it at $45 billion, about 10 percent above total
+debt at the time.</p>
+<figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image"
+data-rt-align="center">
+<div><img src="https://ivn.us/wp-content/uploads/2019/02/11-things-everyone-know-debt-ceiling-85756.jpg">
+</div>
+</figure>
+<h2><strong>Why is Congress debating this now?</strong></h2>
+<p>The debt ceiling is temporarily suspended through March 1, 2019 under the Bipartisan Budget Act of 2018.</p>
+<p>Once the debt ceiling is reinstated, it will be raised to the current debt level – around $22 trillion – meaning
+the U.S. government will not be able to issue any new debt</p>
+<p>Because government spending is projected to significantly exceed revenues this year and beyond, the government
+will not be able to avoid further increasing the debt ceiling. However, through the use of so-called
+“extraordinary measures,” the government can shift funds around and continue to pay its obligations on a
+temporary basis.</p>
+<p>While the Treasury Department has yet to release an estimate of how long its extraordinary measures will last,
+CBO <a
+    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6vYfWuHXtau_PVLyUnILY6FKE8fghQlRDnrgMB0B0j8="
+    target="_blank" data-rt-link-type="external">estimates</a> they will be exhausted near the end of the
+fiscal year (September 30) or early next fiscal year. After this “X date,” the U.S. would only be able to pay
+obligations with incoming receipts, forcing the Treasury to delay and/or miss many payments. A formal debt limit
+increase or suspension will be necessary to avoid default.</p>
+<h2><strong>What are extraordinary measures?</strong></h2>
+<p>When the debt limit is reached, the Treasury Department uses a variety of accounting maneuvers, known as <a
+    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/qQzXknsHRqIBwBaFs7izssQO4D6hDIW_mbYPjVJGgNk="
+    target="_blank" data-rt-link-type="external">extraordinary measures</a>, to avoid defaulting on the
+government’s obligations. For example, the Treasury has prematurely redeemed Treasury bonds held in federal
+employee retirement savings accounts (and replaced them later with interest), halted contributions to certain
+government pension funds, suspended state and local government series securities, and borrowed from money set
+aside to manage exchange rate fluctuations. The Treasury Department first used these measures in 1985, and they
+have been used on at least 14 occasions since then.</p>
+<h2><strong>Can hitting the debt ceiling be avoided without Congressional action?</strong></h2>
+<p>The Treasury Department’s use of extraordinary measures simply delays when debt will reach the statutory limit.
+Spending in excess of incoming receipts has already been legally obligated; that spending will push debt beyond
+the ceiling. There is no plausible set of changes that could generate the instant surplus necessary to avoid
+having to raise or suspend the debt ceiling.</p>
+<p>Some believe the Treasury Department could buy more time by engaging in other, unprecedented actions such as
+selling large amounts of gold, minting a special large-denomination coin, or invoking the Fourteenth Amendment
+to override the statutory debt limit. Whether any of these tools is truly available is in question, and the
+potential economic and political consequences of each of these options are unknown. Realistically, once
+extraordinary measures are exhausted, the only option to avoid defaulting on our nation’s obligations is for
+Congress to change the law to raise or suspend the debt ceiling.</p>
+<h2><strong>What happens if the debt ceiling is hit?</strong></h2>
+<p>Once the government hits the debt ceiling and exhausts all available extraordinary measures, it is no longer
+allowed to issue debt and soon after will run out of cash-on-hand. At that point, given annual deficits,
+incoming receipts will be insufficient to pay millions of daily obligations as they come due. Therefore, the
+federal government will have to at least temporarily default on many of its obligations, from Social Security
+payments and salaries for federal civilian employees and the military to veterans’ benefits and utility bills,
+amongst others.</p>
+<p>A default, or even the perceived threat of one, could have serious negative economic implications. An actual
+default would roil global financial markets and create chaos, since both domestic and international markets
+depend on the relative economic and political stability of U.S. debt instruments and the U.S. economy. Interest
+rates would rise and demand for Treasuries would drop as investors stop or scale back investments in Treasury
+securities if they are no longer considered a perfectly safe investment, thereby increasing the risk of default.
+Even the threat of default during a standoff increases borrowing costs; the Government Accountability Office
+(GAO) <a
+    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/nVZb3_rNgWVKlTqjce3dtd20YywuOHKK7F9VxqFSv-w="
+    target="_blank" data-rt-link-type="external">estimated</a> that the 2011 debt ceiling standoff raised
+borrowing costs by a total of $1.3 billion in Fiscal Year (FY) 2011, and the 2013 debt limit impasse <a
+    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/ZJZH1KrVmHeANGWjccBfBhsYCQOJPhhDoL5BxN6iLAo="
+    target="_blank" data-rt-link-type="external">led to</a> additional costs over a one-year period of
+between $38 million and more than $70 million.</p>
+<p>If interest rates for Treasuries increase substantially, interest rates across the economy would follow,
+affecting car loans, credit cards, home mortgages, business investments, and other costs of borrowing and
+investment. The balance sheets of banks and other institutions with large holdings of Treasuries would decline
+as the value of Treasuries dropped, potentially tightening the availability of credit as seen most recently in
+the Great Recession.</p>
+<h2>How does a shutdown differ from a default?</h2>
+<p>A shutdown occurs when Congress fails to pass appropriations bills that allow agencies to obligate new spending.
+As a result, the government temporarily stops paying employees and contractors who perform government services
+(see <a
+    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/vesoNF4AH_OB6qglIDp0zbDGNk77Se0DpoqeJVjh60s="
+    target="_blank" data-rt-link-type="external">Q&amp;A: Everything You Should Know About Government
+    Shutdowns</a>). However, many more parties are not paid in a default. A default occurs when the Treasury
+does not have enough cash available to pay for obligations that have already been made. In the debt ceiling
+context, a default would be precipitated by the government exceeding the statutory debt limit and being unable
+to pay all of its obligations to its citizens and creditors. Without enough money to pay its bills, any of the
+payments are at risk, including all government spending, mandatory payments, interest on our debt, and payments
+to U.S. bondholders. While a government shutdown would be disruptive, a government default could be disastrous.
+</p>
+<h2>Have policymakers used the debt ceiling to pursue deficit reduction in the past?</h2>
+<p>Although policymakers have often enacted “clean” debt ceiling increases, Congress has also coupled increases with
+other legislative priorities. In a number of cases, Congress has attached debt ceiling increases to budget
+reconciliation legislation and other deficit-reduction policies or processes.</p>
+<p>Indeed, most of the major deficit reduction agreements made since 1980 have been accompanied by a debt ceiling
+increase, although causality has moved in both directions. On some occasions, the debt limit has been used
+successfully to help prompt deficit reduction, and in other cases, Congress has tacked on debt ceiling increases
+to deficit reduction efforts. For example, the 2011 Budget Control Act was enacted along with a debt ceiling
+increase, as was the Gramm-Rudman-Hollings Balanced Budget and Emergency Deficit Control Act of 1985.</p>
+<p>In nearly all instances in which a debt limit increase was either accompanied by deficit reduction measures or
+included in a deficit reduction package, lawmakers have generally approved temporary increases in the debt limit
+to allow time for negotiations to be completed without the risk of default. For example, Congress approved a
+modest increase in the debt limit in December 2009 while negotiations over Statutory Pay-As-You-Go (PAYGO) and
+the establishment of the National Commission on Fiscal Responsibility and Reform were ongoing. Similarly, during
+the negotiations and consideration of the 1990 budget agreement, Congress approved six temporary increases in
+the debt limit before approving a long-term increase as part of the reconciliation bill implementing the deficit
+reduction agreement.</p>
+<p>The Appendix contains further discussion of provisions attached to debt ceiling legislation, including bills in
+1993, 1997, 2013, 2015, and 2018.</p>
+<h2>What should policymakers do?</h2>
+<p>Policymakers should work promptly to raise or suspend the debt ceiling. Failing to raise the debt ceiling would
+be disastrous. It would result in severe negative consequences that experts are not capable of predicting in
+advance. Even threatening a default or taking the country to the brink of default could have serious
+implications. Importantly, though, failing to control the national debt would also have negative consequences;
+rising debt could ultimately stunt economic growth, reduce fiscal flexibility, and increase the cost burden on
+future generations. Thus, lawmakers should consider accompanying a debt ceiling increase with measures to begin
+addressing the debt.</p>
+<p>To be sure, political advantage should not be sought by threatening default, and the debt ceiling must be raised
+or suspended as soon as possible. Lawmakers must not jeopardize the full faith and credit of the U.S.
+Government. At the same time, the need to raise the debt ceiling can serve as a useful moment for taking stock
+of our fiscal state and to pursue revenue increases, entitlement reform, and/or spending reductions.</p>
+<h2><strong>What are the options for improving the debt ceiling?</strong></h2>
+<p>Increasing the debt ceiling requires frequent and often contentious legislative action. While a number of
+increases have been used to enact fiscal reforms, many increases are not necessarily tied to fiscal health. For
+instance, debates regarding the debt ceiling often take place after the policies producing the debt have already
+been put in place. The debt ceiling also measures gross debt, which means that even if the budget was balanced,
+the debt ceiling would still have to be raised if surpluses accumulated in government trust funds like Social
+Security.</p>
+<p>In <a href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/5RT9jkmIrvqZkhjPXeoRG7Pxp553b1r0DcLl04km4-k="
+    target="_blank" data-rt-link-type="external"><em>The Better Budget Process Initiative: Improving the
+        Debt Limit</em></a>, we suggested reforms to the debt ceiling, grouped in four major categories:</p>
+<ul>
+<li>Linking changes in the debt limit to achieving responsible fiscal targets, so that Congress would not need
+    to increase the debt ceiling if fiscal targets are met.</li>
+<li>Having debate about the debt limit when Congress is making decisions on spending and revenue levels, not
+    after those decisions have been made.</li>
+<li>Applying the debt limit to more economically meaningful measures, such as debt held by the public or debt as
+    a share of GDP.</li>
+<li>Replacing the debt limit with limits on future obligations.</li>
+</ul>
+<h2>Where can I learn more?</h2>
+<ul>
+<li>Committee for a Responsible Federal Budget – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/UIcWw6AVCblEvJfz4aa2r-QCQCL3gXvtuCuTGJ-86HU="
+        target="_blank" data-rt-link-type="external">Understanding the Debt Limit</a></li>
+<li>Committee for a Responsible Federal Budget – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/dCNgRSq9dXjwq-9pxi0-2RkBYGR6rFWukNUBkMk_Ys0="
+        target="_blank" data-rt-link-type="external">Improving the Debt Limit</a></li>
+<li>Bipartisan Policy Center – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/UvttTWBLBim2Hm4lEpu4oE2mjlZXIivEJdKQMeBL7EU="
+        target="_blank" data-rt-link-type="external">Debt Limit Analysis</a></li>
+<li>Government Accountability Office – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/nVZb3_rNgWVKlTqjce3dtd20YywuOHKK7F9VxqFSv-w="
+        target="_blank" data-rt-link-type="external">Debt Limit: Analysis of 2011-2012 Actions Taken and
+        Effect of Delayed Increase on Borrowing Costs</a></li>
+<li>Government Accountability Office – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/fPo3-f5Liqnb3TMDulklyYR6MChN522qWEVQz-JaGeQ="
+        target="_blank" data-rt-link-type="external">Debt Limit: Market Response to Recent Impasses
+        Underscores Need to Consider Alternative Approaches</a></li>
+<li>Congressional Budget Office – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6vYfWuHXtau_PVLyUnILY6FKE8fghQlRDnrgMB0B0j8="
+        target="_blank" data-rt-link-type="external">Federal Debt and the Statutory Limit, February 2019</a>
+</li>
+<li>Congressional Research Service – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/aJas20f5UBqrImykHjtPc8XqZ5siR5wDFlXi0tcZ5Fw="
+        target="_blank" data-rt-link-type="external">Reaching the Debt Limit</a></li>
+<li>Congressional Research Service – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/JOfbwozKH-080jU77TuzW4WsXPZ5z_R7APGJs-aN9Bc="
+        target="_blank" data-rt-link-type="external">The Debt Limit</a></li>
+<li>Treasury Department – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6N3vxsQHXiJAZAOwMQBETTjw0b17NwWOdKWTXIpb6QY="
+        target="_blank" data-rt-link-type="external">Frequently Asked Questions About the Public Debt</a>
+</li>
+<li>Treasury Department – <a
+        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/9tC6mp2I5EVvHutHF7a_OLGylkPRvfjx9VOoDS4DQrU="
+        target="_blank" data-rt-link-type="external">Description of Extraordinary Measures, December
+        2017</a></li>
+</ul>
+<p><em>Editor’s note: The content of this article originally </em><a
+    href="https://www.crfb.org/papers/qa-everything-you-should-know-about-debt-ceiling"
+    data-rt-link-type="external"><em>published</em></a><em> on the Commission for a Responsible Federal
+    Budget’s website, and has been republished with permission from CRFB.</em></p>
+<p>‍</p>
+<p>Photo Credit: <a href="https://www.shutterstock.com/g/alenayakusheva" data-rt-link-type="external">Elena
+    Yakusheva</a> / <a href="https://www.shutterstock.com/"
+    data-rt-link-type="external">shutterstock.com</a></p>
+<p>‍</p>`
+// const f = fillHtmlContentImages(html, '5d12af47c7ef12cfe7f44163');
+// console.log(f);
+
+// console.log(youtubeIframe('https://www.youtube.com/watch?v=q8pPX3ysSQs'))
+
+// const datagg = {
+//   "url": "https://anchor.fm/nation-state-of-play/episodes/Will-Gaffney---The-Latest-in-Political-Technology-e17k6lo",
+//   "metadata": {
+//     "width": 400,
+//     "height": 102,
+//     "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fanchor.fm%2Fnation-state-of-play%2Fembed%2Fepisodes%2FWill-Gaffney---The-Latest-in-Political-Technology-e17k6lo&display_name=Anchor+FM+Inc.&url=https%3A%2F%2Fanchor.fm%2Fnation-state-of-play%2Fepisodes%2FWill-Gaffney---The-Latest-in-Political-Technology-e17k6lo&image=https%3A%2F%2Fd3t3ozftmdmh3i.cloudfront.net%2Fproduction%2Fpodcast_uploaded_nologo400%2F15975615%2F15975615-1623900079491-1fd4f71615af4.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=anchor\" width=\"400\" height=\"102\" scrolling=\"no\" title=\"Anchor FM Inc. embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+//     "aspectRatio": 0,
+//     "title": "Will Gaffney - The Latest in Political Technology by Nation State of Play",
+//     "provider_name": "Anchor FM Inc.",
+//     "type": "rich",
+//     "thumbnail_url": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo400/15975615/15975615-1623900079491-1fd4f71615af4.jpg",
+//     "description": "Bryan discusses the latest in political technology with Will Gaffney of Simpli.fi, a leader in localized programmatic solutions. Trade desks, networks, local media groups, agencies, and multi-location brands leverage Simpli.fi's performance, customizable audiences, and efficient delivery models to drive higher ROI in their digital businesses. (Originally aired 17Sept21)",
+//     "author_name": "Will Gaffney - The Latest in Political Technology by Nation State of Play"
+//   }
+// }
+
+// console.log(generateIframe(datagg));
