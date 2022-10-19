@@ -1,392 +1,111 @@
-const jsdom = require("jsdom");
-const webflowServices = require("../services/webflowServices");
-const drupalServices = require("../services/drupalFilesServices");
-const { fileExt } = require("../libs/utils");
-const { JSDOM } = jsdom;
+// this file only run with data from https://github.com/ivcmedia/ivn-archive/blob/3f33db756a1b0a39ec92c7a26ddec803deed0a75/content/news_articles/2012/06/03/wisconsin-recall-as-told-by-instagram.html#L16
+
+const fs = require("fs")
+const jsdom = require("jsdom")
+const webflowServices = require("../services/webflowServices")
+const drupalServices = require("../services/drupalFilesServices")
+const { fileExt } = require("../libs/utils")
+const { JSDOM } = jsdom
+
+const SHORTCODE_REGEX = new RegExp(
+  `\\[[a-z-_0-9]+[^[\\]\n]*\\]|\\[/[a-z-_0-9]+\\]`,
+  "g"
+)
 
 const fillHtmlContentImages = async (html_content, idArticle, media = null) => {
-
-
   let stats = {}
 
   try {
-    const { document } = new JSDOM(`...`).window;
-    const articleBoby = document.createElement("div");
-    articleBoby.innerHTML = html_content;
-    if (media) {
-      const videoProviders = ["YouTube", "Vimeo", "Facebook"];
-      const iframeContent = document.createElement("div");
-      iframeContent.innerHTML = generateIframe(media);
-      if (videoProviders.includes(media.metadata.provider_name)) {
-        articleBoby.append(iframeContent);
-      } else {
-        articleBoby.prepend(iframeContent);
-      }
-    }
-
-    const listFigures = articleBoby.getElementsByTagName("figure");
+    const { document } = new JSDOM(`...`).window
+    const articleBoby = document.createElement("div")
+    articleBoby.innerHTML = html_content
+    const listFigures = articleBoby.getElementsByTagName("img")
 
     for (let index = 0; index < listFigures.length; index++) {
-      const figure = listFigures[index];
-      const figureImages = figure.getElementsByTagName("img");
-      if(figureImages.length > 0)
-      {
-        const img = figure.getElementsByTagName("img")[0];
-        const imgName = `image_content_${idArticle}_${index}${fileExt(img.src)}`;
+      const figure = listFigures[index]
+      const img = figure.src.split("cloudinary://")[1].trim()
+      // const imgName = `image_content_ivn_archive_${idArticle}_${index}.jpg`
 
-        let imgBuffer = {
-          error: 0,
+      let imgBuffer = {
+        error: 0,
+        img: null,
+      }
+
+      try {
+        imgBuffer.img = await webflowServices.downloadWebflowUrlImgBuffer(
+          `https://res.cloudinary.com/ivnnews-archive/image/upload/${img}.jpg`
+        )
+      } catch (error) {
+        // error 404 images dont not exists
+        imgBuffer = {
+          error: 1,
           img: null,
-        };
-
-        try {
-          imgBuffer.img = await webflowServices.downloadWebflowUrlImgBuffer(
-            img.src
-          );
-        } catch (error) {
-          // error 404 images dont not exists
-          imgBuffer = {
-            error: 1,
-            img: null,
-            error,
-          };
-        }
-
-        if(imgBuffer.error == 0)
-        {
-          const statusUpload = await drupalServices.uploadImgDrupal(
-            imgBuffer.img,
-            imgName
-          );
-    
-          if (statusUpload.r1 == 201 && statusUpload.r2 == 201) {
-            img.src = `/sites/default/files/2022-08/${imgName}`;
-          }
+          error,
         }
       }
-    }
-     
-    stats = {
-      error: 0,
-      html: articleBoby.outerHTML
+
+      if (imgBuffer.error == 0) {
+        // const statusUpload = await drupalServices.uploadImgDrupal(
+        //   imgBuffer.img,
+        //   imgName
+        // )
+
+        // if (statusUpload.r1 == 201 && statusUpload.r2 == 201) {
+        //   figure.src = `/sites/default/files/2022-10/${imgName}`
+        // }
+
+        const ext = fileExt(img)
+        let img_name =
+          (ext.length && ext.includes(".")) > 0
+            ? img.replace(ext, ".jpg")
+            : `${img}.jpg`
+
+        fs.writeFileSync(
+          `../../data/ivn-archive/images/${img_name}`,
+          imgBuffer.img,
+          "binary"
+        )
+
+        figure.src = `/sites/default/files/cloudinary/${img_name}`
+
+        // if (statusUpload.r1 == 201 && statusUpload.r2 == 201) {
+        //   figure.src = `/sites/default/files/cloudinary/${imgName}`
+        // }
+      }
     }
 
+    // fs.writeFileSync(
+    //   `../../data/ivn-archive/html/test.html`,
+    //   articleBoby.outerHTML.replace(SHORTCODE_REGEX, ""),
+    //   "utf-8"
+    // )
+
+    stats = {
+      error: 0,
+      // html: articleBoby.outerHTML,
+      html: articleBoby.outerHTML.replace(SHORTCODE_REGEX, ""),
+    }
   } catch (error_) {
-    console.error('fillHtmlContentImages: ', { idArticle, error: error_ });
+    console.error("fillHtmlContentImages: ", { idArticle, error: error_ })
     stats = {
       error: 1,
       html: null,
-      errorDetail: error_
+      errorDetail: error_,
     }
   }
 
-  return stats;
-
-};
-
-const generateIframe = (mediaObject) => {
-  let iframe = "";
-  try {
-    iframe =
-      mediaIfamesProviders[mediaObject.metadata.provider_name](mediaObject);
-  } catch (error) {
-    console.error("generateIframe: ", error);
-  }
-  return iframe;
-};
-
-const geSrcFromIframe = (mediaMetadaData) => {
-  const { document } = new JSDOM(`...`).window;
-  const mediaIframe = document.createElement("div");
-  mediaIframe.innerHTML = mediaMetadaData.html;
-  const url = document.getElementsByTagName("iframe")[0].getAttribute("src");
-  return url.includes("https:") ? url : `https:${url}`;
-};
-
-const podcastIframe = ({ url, metadata }) => {
-  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
-      src="${url}" title="${metadata.title}"></iframe></div>`;
-};
-
-const podcastAnchorIframe = ({ url, metadata }) => {
-  const urlEmbed = url.replace("/episodes/", "/embed/episodes/");
-  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
-      src="${urlEmbed}" title="${metadata.title}"></iframe></div>`;
-};
-
-const podcastOmnyIframe = ({ url, metadata }) => {
-  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
-      src="${url}/embed" title="${metadata.title}"></iframe></div>`;
-};
-
-const podcastBuzzsproutIframe = ({ metadata }) => {
-  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" height="200" scrolling="no"
-      src="${geSrcFromIframe(metadata)}" title="${
-    metadata.title
-  }"></iframe></div>`;
-};
-
-const podcastSimplecastIframe = ({ metadata }) => {
-  return `<div style="margin:20px 0px 20px 0px"><iframe allow="autoplay; clipboard-write" frameborder="0" width="100%" scrolling="no"
-      src="${geSrcFromIframe(metadata)}" title="${
-    metadata.title
-  }"></iframe></div>`;
-};
-
-const facebookVideoIframe = ({ url }) => {
-  return `<div style="margin:20px 0px 20px 0px; text-align:center;">
-  <iframe
-      src="https://www.facebook.com/plugins/video.php?height=314&href=${encodeURI(
-        url
-      )}&show_text=false&width=560&t=0"
-      width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-      allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      allowFullScreen="true"></iframe>
-</div>`;
-};
-
-const vimeoIframe = ({ url }) => {
-  const urlEdit = url.replace("vimeo.com", "player.vimeo.com/video");
-  return `<div style="margin:20px 0px 20px 0px; padding:56.25% 0 0 0;position:relative;"><iframe
-  src="${urlEdit}?h=ef9cf7089c"
-  style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
-  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>`;
-};
-
-const youtubeIframe = ({ url }) => {
-  const urlEdit = url.replace("watch?v=", "embed/");
-  return `<div style="margin:20px 0px 20px 0px; position:relative;padding-top:56.25%;">
-            <iframe allowfullscreen="" frameborder="0" src="${urlEdit}" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>`;
-};
-
-const mediaIfamesProviders = {
-  "Omny Studio": podcastOmnyIframe,
-  "Anchor FM Inc.": podcastAnchorIframe,
-  YouTube: youtubeIframe,
-  Buzzsprout: podcastBuzzsproutIframe,
-  // 'Simplecast': podcastSimplecastIframe,
-  Vimeo: vimeoIframe,
-  Facebook: facebookVideoIframe,
-};
+  return stats
+}
 
 module.exports = {
   fillHtmlContentImages,
-};
+}
 
-const html = `<p>One issue that must be addressed soon is the federal debt ceiling, which will be reinstated on March 2, 2019 at
-around $22 trillion. At that point, the Treasury Department will begin using accounting tools at their disposal,
-called “extraordinary measures,” to avoid defaulting on the government’s obligations. However, the Congressional
-Budget Office (CBO) estimates that these measures will be exhausted near the end of this fiscal year or early
-next fiscal year (e.g., likely September or October). At that point, absent a new agreement to either raise or
-suspend the debt ceiling, the Treasury will be unable to continue paying the nation’s bills.</p>
-<h2><strong>What is the debt ceiling?</strong></h2>
-<p>The debt ceiling is the legal limit on the total amount of federal debt the government can accrue. The limit
-applies to almost all federal debt, including the roughly $16.2 trillion of debt held by the public and the
-roughly $5.9 trillion the government owes itself as a result of borrowing from various government accounts, like
-the Social Security and Medicare trust funds. As a result, the debt continues to rise, due to both annual budget
-deficits financed by borrowing from the public and from trust fund surpluses, which are invested in Treasury
-bills with the promise to be repaid later with interest.</p>
-<h2><strong>When was the debt ceiling established?</strong></h2>
-<p>Prior to establishing the debt ceiling, Congress was required to approve each issuance of debt in a separate
-piece of legislation. The debt ceiling was first enacted in 1917 through the Second Liberty Bond Act and was set
-at $11.5 billion to simplify the process and enhance borrowing flexibility. In 1939, Congress created the first
-aggregate debt limit covering nearly all government debt and set it at $45 billion, about 10 percent above total
-debt at the time.</p>
-<figure class="w-richtext-figure-type-image w-richtext-align-center" data-rt-type="image"
-data-rt-align="center">
-<div><img src="https://ivn.us/wp-content/uploads/2019/02/11-things-everyone-know-debt-ceiling-85756.jpg">
-</div>
-</figure>
-<h2><strong>Why is Congress debating this now?</strong></h2>
-<p>The debt ceiling is temporarily suspended through March 1, 2019 under the Bipartisan Budget Act of 2018.</p>
-<p>Once the debt ceiling is reinstated, it will be raised to the current debt level – around $22 trillion – meaning
-the U.S. government will not be able to issue any new debt</p>
-<p>Because government spending is projected to significantly exceed revenues this year and beyond, the government
-will not be able to avoid further increasing the debt ceiling. However, through the use of so-called
-“extraordinary measures,” the government can shift funds around and continue to pay its obligations on a
-temporary basis.</p>
-<p>While the Treasury Department has yet to release an estimate of how long its extraordinary measures will last,
-CBO <a
-    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6vYfWuHXtau_PVLyUnILY6FKE8fghQlRDnrgMB0B0j8="
-    target="_blank" data-rt-link-type="external">estimates</a> they will be exhausted near the end of the
-fiscal year (September 30) or early next fiscal year. After this “X date,” the U.S. would only be able to pay
-obligations with incoming receipts, forcing the Treasury to delay and/or miss many payments. A formal debt limit
-increase or suspension will be necessary to avoid default.</p>
-<h2><strong>What are extraordinary measures?</strong></h2>
-<p>When the debt limit is reached, the Treasury Department uses a variety of accounting maneuvers, known as <a
-    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/qQzXknsHRqIBwBaFs7izssQO4D6hDIW_mbYPjVJGgNk="
-    target="_blank" data-rt-link-type="external">extraordinary measures</a>, to avoid defaulting on the
-government’s obligations. For example, the Treasury has prematurely redeemed Treasury bonds held in federal
-employee retirement savings accounts (and replaced them later with interest), halted contributions to certain
-government pension funds, suspended state and local government series securities, and borrowed from money set
-aside to manage exchange rate fluctuations. The Treasury Department first used these measures in 1985, and they
-have been used on at least 14 occasions since then.</p>
-<h2><strong>Can hitting the debt ceiling be avoided without Congressional action?</strong></h2>
-<p>The Treasury Department’s use of extraordinary measures simply delays when debt will reach the statutory limit.
-Spending in excess of incoming receipts has already been legally obligated; that spending will push debt beyond
-the ceiling. There is no plausible set of changes that could generate the instant surplus necessary to avoid
-having to raise or suspend the debt ceiling.</p>
-<p>Some believe the Treasury Department could buy more time by engaging in other, unprecedented actions such as
-selling large amounts of gold, minting a special large-denomination coin, or invoking the Fourteenth Amendment
-to override the statutory debt limit. Whether any of these tools is truly available is in question, and the
-potential economic and political consequences of each of these options are unknown. Realistically, once
-extraordinary measures are exhausted, the only option to avoid defaulting on our nation’s obligations is for
-Congress to change the law to raise or suspend the debt ceiling.</p>
-<h2><strong>What happens if the debt ceiling is hit?</strong></h2>
-<p>Once the government hits the debt ceiling and exhausts all available extraordinary measures, it is no longer
-allowed to issue debt and soon after will run out of cash-on-hand. At that point, given annual deficits,
-incoming receipts will be insufficient to pay millions of daily obligations as they come due. Therefore, the
-federal government will have to at least temporarily default on many of its obligations, from Social Security
-payments and salaries for federal civilian employees and the military to veterans’ benefits and utility bills,
-amongst others.</p>
-<p>A default, or even the perceived threat of one, could have serious negative economic implications. An actual
-default would roil global financial markets and create chaos, since both domestic and international markets
-depend on the relative economic and political stability of U.S. debt instruments and the U.S. economy. Interest
-rates would rise and demand for Treasuries would drop as investors stop or scale back investments in Treasury
-securities if they are no longer considered a perfectly safe investment, thereby increasing the risk of default.
-Even the threat of default during a standoff increases borrowing costs; the Government Accountability Office
-(GAO) <a
-    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/nVZb3_rNgWVKlTqjce3dtd20YywuOHKK7F9VxqFSv-w="
-    target="_blank" data-rt-link-type="external">estimated</a> that the 2011 debt ceiling standoff raised
-borrowing costs by a total of $1.3 billion in Fiscal Year (FY) 2011, and the 2013 debt limit impasse <a
-    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/ZJZH1KrVmHeANGWjccBfBhsYCQOJPhhDoL5BxN6iLAo="
-    target="_blank" data-rt-link-type="external">led to</a> additional costs over a one-year period of
-between $38 million and more than $70 million.</p>
-<p>If interest rates for Treasuries increase substantially, interest rates across the economy would follow,
-affecting car loans, credit cards, home mortgages, business investments, and other costs of borrowing and
-investment. The balance sheets of banks and other institutions with large holdings of Treasuries would decline
-as the value of Treasuries dropped, potentially tightening the availability of credit as seen most recently in
-the Great Recession.</p>
-<h2>How does a shutdown differ from a default?</h2>
-<p>A shutdown occurs when Congress fails to pass appropriations bills that allow agencies to obligate new spending.
-As a result, the government temporarily stops paying employees and contractors who perform government services
-(see <a
-    href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/vesoNF4AH_OB6qglIDp0zbDGNk77Se0DpoqeJVjh60s="
-    target="_blank" data-rt-link-type="external">Q&amp;A: Everything You Should Know About Government
-    Shutdowns</a>). However, many more parties are not paid in a default. A default occurs when the Treasury
-does not have enough cash available to pay for obligations that have already been made. In the debt ceiling
-context, a default would be precipitated by the government exceeding the statutory debt limit and being unable
-to pay all of its obligations to its citizens and creditors. Without enough money to pay its bills, any of the
-payments are at risk, including all government spending, mandatory payments, interest on our debt, and payments
-to U.S. bondholders. While a government shutdown would be disruptive, a government default could be disastrous.
-</p>
-<h2>Have policymakers used the debt ceiling to pursue deficit reduction in the past?</h2>
-<p>Although policymakers have often enacted “clean” debt ceiling increases, Congress has also coupled increases with
-other legislative priorities. In a number of cases, Congress has attached debt ceiling increases to budget
-reconciliation legislation and other deficit-reduction policies or processes.</p>
-<p>Indeed, most of the major deficit reduction agreements made since 1980 have been accompanied by a debt ceiling
-increase, although causality has moved in both directions. On some occasions, the debt limit has been used
-successfully to help prompt deficit reduction, and in other cases, Congress has tacked on debt ceiling increases
-to deficit reduction efforts. For example, the 2011 Budget Control Act was enacted along with a debt ceiling
-increase, as was the Gramm-Rudman-Hollings Balanced Budget and Emergency Deficit Control Act of 1985.</p>
-<p>In nearly all instances in which a debt limit increase was either accompanied by deficit reduction measures or
-included in a deficit reduction package, lawmakers have generally approved temporary increases in the debt limit
-to allow time for negotiations to be completed without the risk of default. For example, Congress approved a
-modest increase in the debt limit in December 2009 while negotiations over Statutory Pay-As-You-Go (PAYGO) and
-the establishment of the National Commission on Fiscal Responsibility and Reform were ongoing. Similarly, during
-the negotiations and consideration of the 1990 budget agreement, Congress approved six temporary increases in
-the debt limit before approving a long-term increase as part of the reconciliation bill implementing the deficit
-reduction agreement.</p>
-<p>The Appendix contains further discussion of provisions attached to debt ceiling legislation, including bills in
-1993, 1997, 2013, 2015, and 2018.</p>
-<h2>What should policymakers do?</h2>
-<p>Policymakers should work promptly to raise or suspend the debt ceiling. Failing to raise the debt ceiling would
-be disastrous. It would result in severe negative consequences that experts are not capable of predicting in
-advance. Even threatening a default or taking the country to the brink of default could have serious
-implications. Importantly, though, failing to control the national debt would also have negative consequences;
-rising debt could ultimately stunt economic growth, reduce fiscal flexibility, and increase the cost burden on
-future generations. Thus, lawmakers should consider accompanying a debt ceiling increase with measures to begin
-addressing the debt.</p>
-<p>To be sure, political advantage should not be sought by threatening default, and the debt ceiling must be raised
-or suspended as soon as possible. Lawmakers must not jeopardize the full faith and credit of the U.S.
-Government. At the same time, the need to raise the debt ceiling can serve as a useful moment for taking stock
-of our fiscal state and to pursue revenue increases, entitlement reform, and/or spending reductions.</p>
-<h2><strong>What are the options for improving the debt ceiling?</strong></h2>
-<p>Increasing the debt ceiling requires frequent and often contentious legislative action. While a number of
-increases have been used to enact fiscal reforms, many increases are not necessarily tied to fiscal health. For
-instance, debates regarding the debt ceiling often take place after the policies producing the debt have already
-been put in place. The debt ceiling also measures gross debt, which means that even if the budget was balanced,
-the debt ceiling would still have to be raised if surpluses accumulated in government trust funds like Social
-Security.</p>
-<p>In <a href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/5RT9jkmIrvqZkhjPXeoRG7Pxp553b1r0DcLl04km4-k="
-    target="_blank" data-rt-link-type="external"><em>The Better Budget Process Initiative: Improving the
-        Debt Limit</em></a>, we suggested reforms to the debt ceiling, grouped in four major categories:</p>
-<ul>
-<li>Linking changes in the debt limit to achieving responsible fiscal targets, so that Congress would not need
-    to increase the debt ceiling if fiscal targets are met.</li>
-<li>Having debate about the debt limit when Congress is making decisions on spending and revenue levels, not
-    after those decisions have been made.</li>
-<li>Applying the debt limit to more economically meaningful measures, such as debt held by the public or debt as
-    a share of GDP.</li>
-<li>Replacing the debt limit with limits on future obligations.</li>
-</ul>
-<h2>Where can I learn more?</h2>
-<ul>
-<li>Committee for a Responsible Federal Budget – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/UIcWw6AVCblEvJfz4aa2r-QCQCL3gXvtuCuTGJ-86HU="
-        target="_blank" data-rt-link-type="external">Understanding the Debt Limit</a></li>
-<li>Committee for a Responsible Federal Budget – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/dCNgRSq9dXjwq-9pxi0-2RkBYGR6rFWukNUBkMk_Ys0="
-        target="_blank" data-rt-link-type="external">Improving the Debt Limit</a></li>
-<li>Bipartisan Policy Center – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/UvttTWBLBim2Hm4lEpu4oE2mjlZXIivEJdKQMeBL7EU="
-        target="_blank" data-rt-link-type="external">Debt Limit Analysis</a></li>
-<li>Government Accountability Office – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/nVZb3_rNgWVKlTqjce3dtd20YywuOHKK7F9VxqFSv-w="
-        target="_blank" data-rt-link-type="external">Debt Limit: Analysis of 2011-2012 Actions Taken and
-        Effect of Delayed Increase on Borrowing Costs</a></li>
-<li>Government Accountability Office – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/fPo3-f5Liqnb3TMDulklyYR6MChN522qWEVQz-JaGeQ="
-        target="_blank" data-rt-link-type="external">Debt Limit: Market Response to Recent Impasses
-        Underscores Need to Consider Alternative Approaches</a></li>
-<li>Congressional Budget Office – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6vYfWuHXtau_PVLyUnILY6FKE8fghQlRDnrgMB0B0j8="
-        target="_blank" data-rt-link-type="external">Federal Debt and the Statutory Limit, February 2019</a>
-</li>
-<li>Congressional Research Service – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/aJas20f5UBqrImykHjtPc8XqZ5siR5wDFlXi0tcZ5Fw="
-        target="_blank" data-rt-link-type="external">Reaching the Debt Limit</a></li>
-<li>Congressional Research Service – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/JOfbwozKH-080jU77TuzW4WsXPZ5z_R7APGJs-aN9Bc="
-        target="_blank" data-rt-link-type="external">The Debt Limit</a></li>
-<li>Treasury Department – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/6N3vxsQHXiJAZAOwMQBETTjw0b17NwWOdKWTXIpb6QY="
-        target="_blank" data-rt-link-type="external">Frequently Asked Questions About the Public Debt</a>
-</li>
-<li>Treasury Department – <a
-        href="https://act.myngp.com/el/jtsAJBJNpD9HW5jvyqKTgZLMRID2_CR1VY5d0CRYq7s=/9tC6mp2I5EVvHutHF7a_OLGylkPRvfjx9VOoDS4DQrU="
-        target="_blank" data-rt-link-type="external">Description of Extraordinary Measures, December
-        2017</a></li>
-</ul>
-<p><em>Editor’s note: The content of this article originally </em><a
-    href="https://www.crfb.org/papers/qa-everything-you-should-know-about-debt-ceiling"
-    data-rt-link-type="external"><em>published</em></a><em> on the Commission for a Responsible Federal
-    Budget’s website, and has been republished with permission from CRFB.</em></p>
-<p>‍</p>
-<p>Photo Credit: <a href="https://www.shutterstock.com/g/alenayakusheva" data-rt-link-type="external">Elena
-    Yakusheva</a> / <a href="https://www.shutterstock.com/"
-    data-rt-link-type="external">shutterstock.com</a></p>
-<p>‍</p>`
-// const f = fillHtmlContentImages(html, '5d12af47c7ef12cfe7f44163');
-// console.log(f);
+const html = `[caption id="attachment_24524" align="alignright" width="221" caption="Photo Credit: TheNation.com"][/caption]<p><a href="http://ivn.us/wp-content/uploads/2012/06/wisconsin_recall_ap_img.jpeg" rel="noopener noreferrer"><img alt="" height="154" src="cloudinary://wisconsin_recall_ap_img.jpeg" width="221"></a></p><p>Tuesday, voters of Wisconsin will decide whether or not to recall Republican Gov. Scott Walker. As one of the most expensive elections in American history, the media has been covering the story in print and online. Meanwhile, residents and reporters take to Instagram to tell their story.</p><div><div><ol><li><div><div></div><div></div><div><span></span></div><div><span>Saturday morning, around 4,000 gathered to hear keynote speakers stress the importance of Tuesday's recall election in Wisconsin at the Racine Tea Party&nbsp;rally in support of Wisc. Governor Scott Walker.</span></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://twitter.com/NBCNews/status/208957949266239488" rel="noopener noreferrer"><img alt="" src="cloudinary://media"></a><div><div><div><img alt="NBCNews" src="cloudinary://nbc_news_twitter_icon_clean_normal.jpg"></div><div>RT @AlexNBCNews RNC Chairman Reince Preibus (w/ sunglasses) addresses this WI Tea Party rally #wisconsinrecall http://instagr.am/p/LYK0FxTAv0/</div></div><div></div><div></div></div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://twitter.com/AlexNBCNews/status/208945429805670400" rel="noopener noreferrer"><img alt="" src="cloudinary://media"></a><div><div><div><img alt="AlexNBCNews" src="cloudinary://Alex_normal.jpg"></div><div>.@reppaulryan speaking praise of Gov. Walker at Racine Tea Party rally #wisconsinrecall #decision2012 http://instagr.am/p/LYHJ8HTAtq/</div></div><div></div></div></div></div></li><li><div><div>Rep. Paul Ryan told the Wisconsin crowd, “You know what? On Tuesday we save Wisconsin, and on Nov. 6, Wisconsin saves America.”</div></div></li><li><div><div><div><div><img alt="AlexNBCNews" src="cloudinary://Alex_normal.jpg"></div><div>Ryan didn't mention anything about Romney specifically (nor VP rumors) in his very short speech -- main focus on #wisconsinrecall</div></div><div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://www.flickr.com/photos/68717799@N08/7316892418" rel="noopener noreferrer"><img alt="" src="cloudinary://7316892418_fb0b15dba4_z.jpg"></a></div><div></div></div></li><li><div><div>Both Governor Walker and Democratic challenger Tom Barrett attended the Brown Co. Dairy Breakfast during the final weekend before the recall election.</div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://twitter.com/AlexNBCNews/status/209285891578007553" rel="noopener noreferrer"><img alt="" src="cloudinary://media"></a><div><div><div><img alt="AlexNBCNews" src="cloudinary://Alex_normal.jpg"></div><div>Gov. Walker serves eggs at the Brown Co. Dairy Breakfast in De Pere, WI #wisconsinrecall http://instagr.am/p/LaiBKRTAgy/</div></div><div></div><div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://twitter.com/AlexNBCNews/status/209293191730577409" rel="noopener noreferrer"><img alt="" src="cloudinary://media"></a><div><div><div><img alt="AlexNBCNews" src="cloudinary://Alex_normal.jpg"></div><div>Democratic challenger Barrett arrives to serve eggs at the Brown Co. Breakfast #wisconsinrecall http://instagr.am/p/LalYmmzAil/</div></div><div></div><div></div></div></div><div></div></div></li><li><div><div>Friday, Milwaukee Mayor Tom Barrett held his own rally in Pere Marquette Park, with an appearance from former president Bill Clinton.</div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://twitter.com/NBCNews/status/208628428977602560" rel="noopener noreferrer"><img alt="" src="cloudinary://media"></a><div><div><div><img alt="NBCNews" src="cloudinary://nbc_news_twitter_icon_clean_normal.jpg"></div><div>Fmr Pres. Bill #Clinton &amp; Democratic challenger Tom Barrett rally ahead of next week’s #WisconsinRecall. PHO http://instagr.am/p/LV298UR9-E/</div></div><div></div><div></div></div></div><div></div></div></li><li><div><div>Clinton spoke to the importance of recalling Governor Scott Walker: "Ordinarily, I'm against recall elections. I went to try to fight one in California...But sometimes, it is the only way to avoid a disastrous course. Sometimes, it is the only way to avoid being misunderstood."</div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://www.flickr.com/photos/68717799@N08/7316870320" rel="noopener noreferrer"><img alt="" src="cloudinary://7316870320_3ce1bbc9f7_z.jpg"></a><div><div>Bill Clinton</div></div></div><div></div></div></li><li><div><div>Journalists and photographers aren't the only ones using Instagram to tell the Wisconsin recall story.&nbsp;Politicos from&nbsp;across the state of Wisconsin are uploading photos representing their sentiment towards the recall election, showcasing the sights and sounds of Wisconsin in the week leading up to the election. Here are a few creative photos from Instagrammers (igers)&nbsp;who have successfully used the social media platform to tell the Wisconsin recall story.</div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LYR12DohnV/" rel="noopener noreferrer"><img alt="" src="cloudinary://ca6e00c0acd511e1abd612313810100a_7.jpg"></a><div><div>Solidarity #recallwalker #wisconsin</div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">David Fabian</a></div><div><div>Sat, Jun 02 2012 13:10:02</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/KoON7KFq3F/" rel="noopener noreferrer"><img alt="" src="cloudinary://5e00b1209e2b11e192e91231381b3d7a_7.jpg"></a><div><div>They are taking this seriously. #scottwalker #standwithwalker #recall</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://www.executingideas.com/" rel="noopener noreferrer">Adam Jeske</a></div><div><div>Mon, May 14 2012 21:14:49</div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LVr43xtks9/" rel="noopener noreferrer"><img alt="" src="cloudinary://35d5d372ac0b11e1b9f1123138140926_7.jpg"></a><div><div>Chili is a patriot dog here in Wisconsin in support of @govwalker! WALKER IS WORKING! #wirecall #wiunion</div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://www.TeaPartyExpress.org" rel="noopener noreferrer">teapartyexpress</a></div><div><div>Fri, Jun 01 2012 12:59:54</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LYwBsgJTEg/" rel="noopener noreferrer"><img alt="" src="cloudinary://a34aac4eacfa11e1989612313815112c_7.jpg"></a><div><div>Hey, Wisconsin friends, vote on Tuesday! #recallwalker #reclaimWI</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">Stacy Ann</a></div><div><div>Sat, Jun 02 2012 17:33:47</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LPQ4poBzEP/" rel="noopener noreferrer"><img alt="" src="cloudinary://80dbb780aa1511e1a9f71231382044a1_7.jpg"></a><div><div>My new shirt about sums it up! :P</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">Ryan Englund</a></div><div><div>Wed, May 30 2012 01:08:33</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/KYdoVnqVi-/" rel="noopener noreferrer"><img alt="" src="cloudinary://2e7aa240995c11e1a39b1231381b7ba1_7.jpg"></a><div><div>#voting complete. Great vibe and beautiful people ... #recallwalker #wisconsinvote #wisconsin</div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://www.foodalution.com" rel="noopener noreferrer">Megan Hile</a></div><div><div>Tue, May 08 2012 18:21:39</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LG6yCRhiCN/" rel="noopener noreferrer"><img alt="" src="cloudinary://848800b6a78911e1a39b1231381b7ba1_7.jpg"></a><div><div>#truedat #scottwalker #wisconsin</div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">colormered4638</a></div><div><div>Sat, May 26 2012 19:21:27</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LVehvMQ62J/" rel="noopener noreferrer"><img alt="" src="cloudinary://e744258eabfa11e1a92a1231381b6f02_7.jpg"></a><div><div>#wiunion #wirecall</div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://piscene.blogspot.com" rel="noopener noreferrer">thegirlone</a></div><div><div>Fri, Jun 01 2012 11:03:10</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/K6cFAYEABQ/" rel="noopener noreferrer"><img alt="" src="cloudinary://89759066a3ba11e1989612313815112c_7.jpg"></a><div><div>21 - where you stand (with scott walker) #gowalker #govwalker #mayphotoaday</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">Amy Mason</a></div><div><div>Mon, May 21 2012 23:02:16</div></div><div></div></div></div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/KwCTWCuhtt/" rel="noopener noreferrer"><img alt="" src="cloudinary://d2541a80a08d11e1b9f1123138140926_7.jpg"></a><div><div>Bye bye #recall #wiunion #solidaritywi #recallwi #recallwalker</div><div></div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">Julie</a></div><div><div>Thu, May 17 2012 22:04:37</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/LbSJ64MbTX/" rel="noopener noreferrer"><img alt="" src="cloudinary://8c74d460adc011e18cf91231380fd29b_7.jpg"></a><div><div>Political statements at #graduation. #Republican #Walker #Wisconsin</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">a_krauzz</a></div><div><div>Sun, Jun 03 2012 17:10:29</div></div><div></div></div></div></div><div></div></div></li><li><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=http://instagr.am/p/Kf6Jl9BGD1/" rel="noopener noreferrer"><img alt="" src="cloudinary://dedbf2289ba111e1be6a12313820455d_7.jpg"></a><div><div>The dog ate my absentee ballot request! #recall #ScottWalker</div><div><div><a href="http://instagram.com" rel="noopener noreferrer"><img alt="" src="cloudinary://instagram.com"></a></div></div><div><div><a href="http://stats.storify.com/record/click?sid=4fcbe582df13dd161a00646a&amp;redirect=" rel="noopener noreferrer">cremmadela</a></div><div><div>Fri, May 11 2012 15:45:32</div></div><div></div></div></div></div><div></div></div></li></ol></div></div><p><em>Story aggregated using Storify. To see the original, visit the website<a href="http://storify.com/IVNetwork/wisconsin-recall-as-told-by-instagram#" rel="noopener noreferrer">here</a>.</em></p>`
 
-// console.log(youtubeIframe('https://www.youtube.com/watch?v=q8pPX3ysSQs'))
-
-// const datagg = {
-//   "url": "https://anchor.fm/nation-state-of-play/episodes/Will-Gaffney---The-Latest-in-Political-Technology-e17k6lo",
-//   "metadata": {
-//     "width": 400,
-//     "height": 102,
-//     "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fanchor.fm%2Fnation-state-of-play%2Fembed%2Fepisodes%2FWill-Gaffney---The-Latest-in-Political-Technology-e17k6lo&display_name=Anchor+FM+Inc.&url=https%3A%2F%2Fanchor.fm%2Fnation-state-of-play%2Fepisodes%2FWill-Gaffney---The-Latest-in-Political-Technology-e17k6lo&image=https%3A%2F%2Fd3t3ozftmdmh3i.cloudfront.net%2Fproduction%2Fpodcast_uploaded_nologo400%2F15975615%2F15975615-1623900079491-1fd4f71615af4.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=anchor\" width=\"400\" height=\"102\" scrolling=\"no\" title=\"Anchor FM Inc. embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
-//     "aspectRatio": 0,
-//     "title": "Will Gaffney - The Latest in Political Technology by Nation State of Play",
-//     "provider_name": "Anchor FM Inc.",
-//     "type": "rich",
-//     "thumbnail_url": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo400/15975615/15975615-1623900079491-1fd4f71615af4.jpg",
-//     "description": "Bryan discusses the latest in political technology with Will Gaffney of Simpli.fi, a leader in localized programmatic solutions. Trade desks, networks, local media groups, agencies, and multi-location brands leverage Simpli.fi's performance, customizable audiences, and efficient delivery models to drive higher ROI in their digital businesses. (Originally aired 17Sept21)",
-//     "author_name": "Will Gaffney - The Latest in Political Technology by Nation State of Play"
-//   }
+// const test = async () => {
+//   const d = await fillHtmlContentImages(html, "24521_test6")
+//   console.log(d)
 // }
 
-// console.log(generateIframe(datagg));
+// test()

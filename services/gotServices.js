@@ -1,7 +1,11 @@
-const got = require("got");
-const { urlApi } = require("./config");
+const got = require("got")
+const { urlApi } = require("./config")
 
 const send = async (request) => {
+  // console.log(
+  //   "token: ",
+  //   Buffer.from("API:5CpEjbcwXCJ3e8f", "utf8").toString("base64")
+  // )
   const res = await got({
     url: `${urlApi}jsonapi${request.url}`,
     method: request.method,
@@ -13,11 +17,10 @@ const send = async (request) => {
       ...request.headers,
     },
     body: request.data,
-  });
-  return res;
-};
-
+  })
+  return res
+}
 
 module.exports = {
-    send,
-};
+  send,
+}
