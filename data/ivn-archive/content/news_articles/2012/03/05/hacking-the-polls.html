@@ -1,0 +1,39 @@
+<!--
+id: "21425"
+slug: hacking-the-polls
+authors:
+  - damon_eris
+createdOn: "2012-03-05T16:58:28Z"
+publishedOn: "2012-03-05T16:58:28Z"
+lastModified: "2013-11-07T02:02:49Z"
+isPublished: true
+featuredImage: "cloudinary://hacking-the-polls-52211.jpg"
+headline: "Hacking the Polls: Vulnerability in Electronic Voting Systems"
+tags: []
+searchDescription: ~
+searchTitle: ~
+-->
+<p>Among those who advocate for the “modernization” of our voting systems, internet-based electronic voting and registration platforms are often offered as an ideal solution to the problems inherent in our current registration and voting processes. A newly published paper describes the ease with which a small group of researchers was able to hack a Washington D.C. based internet voting pilot project, demonstrating that these new systems are not ready for take-off.</p>
+
+[advertisement title=""] In 2010, the Washington D.C. Board of Elections and Ethics announced that it would offer a “Digital Vote-by-Mail Service” that would have allowed overseas voters registered in the District to cast their votes over the internet. The federally-funded project ran a mock election allowing for public testing of its functionality and security ahead of the November <p><a href="http://ivn.us/category/elections-2012/president/" rel="noopener noreferrer">election</a>. A research team from the University of Michigan at Ann Arbor reports that it was able to gain “near complete control of the election server” in under two days time. Even more disturbingly, the hackers state that elections officials were effectively incapable of discerning that their system had been compromised.</p>
+
+<p>“We successfully changed every vote and revealed almost every secret ballot. Election officials did not detect our intrusion for nearly two business days – and might have remained unaware for far longer had we not deliberately left a prominent clue,” wrote Scott Wolchok, Eric Wustrow, Dawn Isabel and J. Alex Halderman.</p>
+
+<p>The paper, entitled “Attacking the Washington D.C. Internet Voting System,” was published in the <em>Proceedings of the 16</em><sup><em>th</em></sup><em> Conference on Financial Cryptography and Data Security</em> last month. The flaws revealed by the security breach resulted in the discontinuation of the internet-based voting service by the D.C. Board of Elections and Ethics.</p>
+
+<p>Within hours, the research team was able to discover serious vulnerabilities that allowed them to compromise the system's server. Among other things, they were able to retrieve the key code used for encrypting individual ballots, which allowed them to change every single vote to reflect a “forged ballot of our choosing,” as well as ensure that all ballots processed from then on would reflect the election outcome they desired. The hackers opted to have all ballots indicate a vote cast for Bender, the robot character from the television show <em>Futurama</em>.</p>
+
+<p>The team decided to “hide their tracks” and reportedly did so with moderate success, but they also left a calling card. “We uploaded a recording of “The Victors” (the University of Michagan fight song) and modified the confirmation page to play this recording,” reads the paper.</p>
+
+[related_posts title=""]
+
+<p>Even more embarrassingly, the U of M computer scientists were also able to attack and compromise the pilot program's network infrastructure in addition to its application server. The group was able to infiltrate the program's terminal server “using a default password (dbps) obtained from an online copy of the user manual.” Once inside the system, they created backup admin accounts to ensure they retained access even if their attack was discovered. Upon inspection of the terminal server logs, it was noticed that other individuals and/or groups were attempting to gain access to the system.</p>
+
+<p>“We realized that one of the default logins to the terminal server (user: admin, password: admin) would likely be guessed by the attacker in a short period of time and there fore decided to protect the device from further compromise,” they write. Such attacks were detected from IP addresses in Iran, New Jersey, India and China.</p>
+
+<p>In addition, the team was able to gain access to surveillance webcams of the room in which the pilot's server was located. “These webcams may have been intended to increase security by allowing remote surveillance of the server room, but in practice, since they were unsecured, they had the potential to leak information that would be extremely useful to attackers,” they write.</p>
+
+<p>The paper reports that elections officials were effectively incapable of detecting the nature and character of the attack, despite their calling card.</p>
+<blockquote><em>“They confirmed that they were unable to see our attacks in their intrusion detection system logs, that they were unable to detect our presence in the network equipment until after the trial, and they they did not discover the attack until they noticed our intentional calling card.”</em></blockquote>
+<p>In conclusion, the researchers argue against any adoption of electronic and internet based voting systems at present.</p>
+<blockquote><em>“Secure internet voting in practice will require significant fundamental advances in computer security, and we urge Internet voting proponents to reconsider deployment until and unless major breakthroughs are achieved.”</em></blockquote>

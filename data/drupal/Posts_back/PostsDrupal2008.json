@@ -1,0 +1,673 @@
+[
+  {
+    "idWebFlow": "69",
+    "alias": "2008/10/02/give-victims-voice-vote-yes-prop-9",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "73",
+    "alias": "2008/10/02/prop-10-arbitrarily-allocates-taxpayer-dollars-big-business",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "57",
+    "alias": "2008/10/02/prop-2-unsafe-and-costly-mandate-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "60",
+    "alias": "2008/10/02/prop-3-will-save-lives-and-provide-necessary-improvements-our-hospitals",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "67",
+    "alias": "2008/10/02/prop-7-uniting-special-interests-everywhere",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "72",
+    "alias": "2008/10/02/proposition-10-will-reduce-energy-costs-and-global-warming-emmisions",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "56",
+    "alias": "2008/10/02/proposition-2-good-animals-and-economy",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "61",
+    "alias": "2008/10/02/proposition-3-huge-waste-money-good-cause",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "63",
+    "alias": "2008/10/02/proposition-6-safe-communities",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "66",
+    "alias": "2008/10/02/proposition-7-detox-our-oil-addiction",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "70",
+    "alias": "2008/10/02/proposition-9-costly-fix-system-already-works",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "64",
+    "alias": "2008/10/02/we-cant-afford-proposition-6",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "208",
+    "alias": "2008/10/03/backwards-priorities-proposition-1a",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "195",
+    "alias": "2008/10/03/end-gerrymandering-vote-yes-proposition-11",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "170",
+    "alias": "2008/10/03/prop-11-creates-more-bureaucracy-and-less-accountability",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "194",
+    "alias": "2008/10/03/prop-1a-transportation-and-economic-stimulus-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "150",
+    "alias": "2008/10/03/prop-4-costly-and-futile-attempt-legislate-family-values",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "160",
+    "alias": "2008/10/03/prop-5-just-more-bureaucracy-special-interests",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "159",
+    "alias": "2008/10/03/prop-5-will-reduce-reduce-overcrowding-save-taxpayers-money-and-change-lives",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "214",
+    "alias": "2008/10/03/proposition-12-poorly-thought-out",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "149",
+    "alias": "2008/10/03/proposition-4-strengthens-families-and-protects-children",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "213",
+    "alias": "2008/10/03/support-our-veterans-vote-yes-prop-12",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "240",
+    "alias": "2008/10/08/additional-waterfront-research-sites",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "241",
+    "alias": "2008/10/08/caivp-waterfront-resources",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "252",
+    "alias": "2008/10/08/families-face-alternative-minimum-tax",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "251",
+    "alias": "2008/10/08/group-offers-simple-fix-alternative-minimum-tax",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "246",
+    "alias": "2008/10/08/press-conference-vision-san-diegos-waterfront",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "247",
+    "alias": "2008/10/08/rethinking-san-diegos-waterfront",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "244",
+    "alias": "2008/10/08/roberts-peace-plan-waterfront-makes-sense",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "243",
+    "alias": "2008/10/08/shaping-future-fragmented-development-threatens-bayfront",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "245",
+    "alias": "2008/10/08/voter-project-presents-alternative-waterfront-plan-2",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "257",
+    "alias": "2008/10/09/read-california-nonpartisan-primary-initiative",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "272",
+    "alias": "2008/10/10/energy-tax-provisions-in-the-emergency-economic-stabilization-act-of-2008-october-1-2008",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "268",
+    "alias": "2008/10/10/tax-revenue-and-distributional-effects-lowering-10-bracket-zero-2008",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "273",
+    "alias": "2008/10/10/voter-project-presents-alternative-waterfront-plan",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "285",
+    "alias": "2008/10/11/caivp-airport-presentations-ii",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "284",
+    "alias": "2008/10/11/caivp-airport-presentations",
+    "statusRest": 201
+  },
+  { "idWebFlow": "283", "alias": "2008/10/11/fact-sheet", "statusRest": 201 },
+  {
+    "idWebFlow": "278",
+    "alias": "2008/10/11/san-diego-airport-sustainability-analysis",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "422",
+    "alias": "2008/10/19/renderings-lindbergh-intermodal-concept-images",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "443",
+    "alias": "2008/10/21/studying-impact-proposition-1a",
+    "statusRest": 201
+  },
+  { "idWebFlow": "438", "alias": "2008/10/21/whats-name", "statusRest": 201 },
+  {
+    "idWebFlow": "458",
+    "alias": "2008/10/25/follow-money-who-funding-prop-1a",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "451",
+    "alias": "2008/10/25/no-taxation-without-speculation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "556",
+    "alias": "2008/10/28/mail-voting-gains-popularity-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "427",
+    "alias": "2008/10/28/proposition-5-nora-and-california-framework-discussion",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "562",
+    "alias": "2008/10/29/new-era-introspection",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665699849980,
+        "socket": 1665699849980,
+        "lookup": 1665699849983,
+        "connect": 1665699850056,
+        "secureConnect": 1665699850138,
+        "upload": 1665699850139,
+        "response": 1665699867558,
+        "end": 1665699867708,
+        "phases": {
+          "wait": 0,
+          "dns": 3,
+          "tcp": 73,
+          "tls": 82,
+          "request": 1,
+          "firstByte": 17419,
+          "download": 150,
+          "total": 17728
+        }
+      }
+    }
+  },
+  { "idWebFlow": "565", "alias": "2008/10/30/just-deal-it", "statusRest": 201 },
+  {
+    "idWebFlow": "575",
+    "alias": "2008/11/01/thank-you-your-comments",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "666",
+    "alias": "2008/11/03/abort-mission",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "665",
+    "alias": "2008/11/03/treading-economic-eggshells",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "664",
+    "alias": "2008/11/03/unconventional-look-proposition-8",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "674",
+    "alias": "2008/11/04/importance-todays-election-cynic",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "672",
+    "alias": "2008/11/04/morning-links-nov-4-2008",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "670",
+    "alias": "2008/11/04/prop-1a-california-cant-even-sell-bonds-it-already-authorized",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "673",
+    "alias": "2008/11/04/saving-people-themselves-yes-prop-11",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "675",
+    "alias": "2008/11/05/barack-obama-elected-president-united-states",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "676",
+    "alias": "2008/11/05/california-proposition-results",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "677",
+    "alias": "2008/11/05/hope-let-change-begin",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "678",
+    "alias": "2008/11/06/california-today",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "682",
+    "alias": "2008/11/07/crunching-new-sales-tax",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "687",
+    "alias": "2008/11/09/little-sir-echo-garamendi-calls-blocking-spending-cuts",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "688",
+    "alias": "2008/11/10/california-today",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "689",
+    "alias": "2008/11/10/where-have-your-bailout-dollars-gone",
+    "statusRest": 201
+  },
+  { "idWebFlow": "692", "alias": "2008/11/11/burn-witch", "statusRest": 201 },
+  {
+    "idWebFlow": "690",
+    "alias": "2008/11/11/time-cut-budget",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "696",
+    "alias": "2008/11/12/california-roller-coaster-ride-gay-chickens",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "693",
+    "alias": "2008/11/12/proposition-8-and-voluntary-contracts",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "698",
+    "alias": "2008/11/13/analyst-says-state-deficit-may-near-28-billion",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "700",
+    "alias": "2008/11/13/daniel-weintraub-prop-11-paves-way-more-reform",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "699",
+    "alias": "2008/11/13/gop-may-back-tax-hikes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "701",
+    "alias": "2008/11/13/open-primaries-another-path-moderation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "705",
+    "alias": "2008/11/14/proposition-8-supporters-target-businesses",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "709",
+    "alias": "2008/11/15/bailouts-monetary-policy-fraud",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "710",
+    "alias": "2008/11/15/lungren-challenges-boehner-house-gop-leader",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "712",
+    "alias": "2008/11/16/race-governor-feinstein-2010",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "714",
+    "alias": "2008/11/17/4th-district-sends-two-congressmen-washington",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "716",
+    "alias": "2008/11/17/barack-obama-santa-claus",
+    "statusRest": 201
+  },
+  { "idWebFlow": "718", "alias": "2008/11/18/back-bus", "statusRest": 201 },
+  {
+    "idWebFlow": "720",
+    "alias": "2008/11/18/financial-crisis-tab-already-over-4-trillion",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "717",
+    "alias": "2008/11/18/peak-food-and-coming-agricultural-crisis-californias-leading-role",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "719",
+    "alias": "2008/11/18/proposition-8-headed-high-court",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "721",
+    "alias": "2008/11/19/its-my-party-and-ill-cry-if-i-want",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "722",
+    "alias": "2008/11/19/state-lawmakers-overseas-during-budget-crises",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1107",
+    "alias": "2008/11/20/top-california-gop-legislator-holds-line-taxes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1237",
+    "alias": "2008/11/21/governor-schwarzenegger-will-tax-veterinary-services",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1330",
+    "alias": "2008/11/22/schwarzenegger-issues-statement-californias-unemployment-rate",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1391",
+    "alias": "2008/11/23/why-hollywood-torn-prop-8-activism",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1473",
+    "alias": "2008/11/24/huffington-post-its-time-gop-palace-coup",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1705",
+    "alias": "2008/11/25/california-legislators-expected-vote-budget-today",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1504",
+    "alias": "2008/11/25/grading-assembly-class-02",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665699923884,
+        "socket": 1665699923884,
+        "lookup": 1665699923887,
+        "connect": 1665699923960,
+        "secureConnect": 1665699924034,
+        "upload": 1665699924035,
+        "response": 1665699943651,
+        "end": 1665699943755,
+        "phases": {
+          "wait": 0,
+          "dns": 3,
+          "tcp": 73,
+          "tls": 74,
+          "request": 1,
+          "firstByte": 19616,
+          "download": 104,
+          "total": 19871
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "1476",
+    "alias": "2008/11/25/tis-season",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665699924081,
+        "socket": 1665699924081,
+        "lookup": 1665699924087,
+        "connect": 1665699924161,
+        "secureConnect": 1665699924236,
+        "upload": 1665699924236,
+        "response": 1665699943762,
+        "end": 1665699943875,
+        "phases": {
+          "wait": 0,
+          "dns": 6,
+          "tcp": 74,
+          "tls": 75,
+          "request": 0,
+          "firstByte": 19526,
+          "download": 113,
+          "total": 19794
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "1736",
+    "alias": "2008/11/26/california-takes-lead-renewable-energy-or-does-it",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1961",
+    "alias": "2008/11/30/peak-food-and-coming-agricultural-crisis-americas-flawed-agricultural-policy",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1962",
+    "alias": "2008/11/30/term-limits-place-reason",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1969",
+    "alias": "2008/12/02/carter-policy-reagan-country",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1968",
+    "alias": "2008/12/02/governor-declares-fiscal-emergency",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1974",
+    "alias": "2008/12/04/case-non-partisan-primaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1975",
+    "alias": "2008/12/05/soaring-budget-deficits-will-california-go-way-chicago-machine",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1976",
+    "alias": "2008/12/06/addicted-money-california-and-campaign-finance-reform",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1982",
+    "alias": "2008/12/09/peak-food-and-coming-agricultural-crisis-how-did-we-get-here",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1986",
+    "alias": "2008/12/10/america-land-czar",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1985",
+    "alias": "2008/12/10/californias-budget-fiasco-2",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1983",
+    "alias": "2008/12/10/life-liberty-and-elbow-room",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1991",
+    "alias": "2008/12/11/voters-guide-direct-democracy-blues",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1993",
+    "alias": "2008/12/12/taxation-without-representation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1994",
+    "alias": "2008/12/14/need-sustainability",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1996",
+    "alias": "2008/12/16/burning-greenbacks-save-greenhouse",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1995",
+    "alias": "2008/12/16/gotcha-politics-and-its-journalistic-enablers",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1997",
+    "alias": "2008/12/17/why-dont-universities-receive-more-funding",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1998",
+    "alias": "2008/12/18/chu-him-and-spit-him-out",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2000",
+    "alias": "2008/12/19/sacramento-tea-party",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2001",
+    "alias": "2008/12/20/terminating-budget-crisis",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2002",
+    "alias": "2008/12/22/ideology-competence",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2003",
+    "alias": "2008/12/23/cool-it-down",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665699957444,
+        "socket": 1665699957445,
+        "lookup": 1665699957447,
+        "connect": 1665699957520,
+        "secureConnect": 1665699957595,
+        "upload": 1665699957595,
+        "response": 1665699965020,
+        "end": 1665699965171,
+        "phases": {
+          "wait": 1,
+          "dns": 2,
+          "tcp": 73,
+          "tls": 75,
+          "request": 0,
+          "firstByte": 7425,
+          "download": 151,
+          "total": 7727
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "2004",
+    "alias": "2008/12/25/california-independent-voter-christmas-list",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2063",
+    "alias": "2008/12/30/unionized-states-america",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2084",
+    "alias": "2008/12/31/future-california-lottery",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2068",
+    "alias": "2008/12/31/new-media-and-schwarzeneggers-budget-crisis-clock",
+    "statusRest": 201
+  }
+]

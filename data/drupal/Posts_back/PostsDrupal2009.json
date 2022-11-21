@@ -1,0 +1,1592 @@
+[
+  {
+    "idWebFlow": "2111",
+    "alias": "2009/01/01/happy-new-year-caivp",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2122",
+    "alias": "2009/01/02/right-theatricality",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2150",
+    "alias": "2009/01/03/two-months-midnight",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2185",
+    "alias": "2009/01/05/shrinking-press-sacramento",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2209",
+    "alias": "2009/01/06/golden-state-meets-iron-lady",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2236",
+    "alias": "2009/01/07/mandatory-two-day-vacation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2274",
+    "alias": "2009/01/08/taxing-problem",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2301",
+    "alias": "2009/01/09/san-francisco-wage-cuts-and-freezes-helpful",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2413",
+    "alias": "2009/01/12/black-and-blue",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2436",
+    "alias": "2009/01/13/first-they-came-school-board",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2456",
+    "alias": "2009/01/14/laborious-confirmation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2495",
+    "alias": "2009/01/16/hit-road-quack",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2679",
+    "alias": "2009/01/21/state-university-system-gets-crunched",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2710",
+    "alias": "2009/01/22/stimulate-states",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2747",
+    "alias": "2009/01/23/amend-budget-voting-requirement",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2828",
+    "alias": "2009/01/26/state-emissions-standards-finally-approved",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2859",
+    "alias": "2009/01/27/why-so-unserious",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2887",
+    "alias": "2009/01/28/lesson-learned-failure-prop-77",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2904",
+    "alias": "2009/01/29/asking-impossible-governor-seeks-sacrifice-politicos",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "2918",
+    "alias": "2009/01/30/californias-leon-panetta-good-choice-head-cia",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3007",
+    "alias": "2009/02/02/stimulating-education-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3041",
+    "alias": "2009/02/03/our-wild-west-politics",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3057",
+    "alias": "2009/02/04/cooper-obama-staff-encouraged-defiance-pelosi",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3054",
+    "alias": "2009/02/04/think-we-have-it-bad-look-east",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3089",
+    "alias": "2009/02/05/extraneous-spending-not-half-fun-peanut-butter-jelly-sandwich",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3110",
+    "alias": "2009/02/06/lawsuit-must-not-be-allowed-weaken-campaign-finance-disclosure-laws",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3195", "alias": "2009/02/09/green", "statusRest": 201 },
+  {
+    "idWebFlow": "3216",
+    "alias": "2009/02/10/harsh-medicine",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3214",
+    "alias": "2009/02/10/looking-bi-partisanship-post-partisan-world",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3251",
+    "alias": "2009/02/11/expand-sales-tax",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3366",
+    "alias": "2009/02/11/top-two-candidates-non-partisan-open-primary-act-preamble",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701173004,
+        "socket": 1665701173005,
+        "lookup": 1665701173006,
+        "connect": 1665701173077,
+        "secureConnect": 1665701173149,
+        "upload": 1665701173149,
+        "response": 1665701190861,
+        "end": 1665701191006,
+        "phases": {
+          "wait": 1,
+          "dns": 1,
+          "tcp": 71,
+          "tls": 72,
+          "request": 0,
+          "firstByte": 17712,
+          "download": 145,
+          "total": 18002
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "3256",
+    "alias": "2009/02/11/we-dont-need-no-education-ii",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3277",
+    "alias": "2009/02/12/amt-hitting-middle-class",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3279",
+    "alias": "2009/02/12/amt-outdated-and-ready-reform",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3264",
+    "alias": "2009/02/12/amt-talk-it-sure-stimulating",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3311",
+    "alias": "2009/02/13/combating-crisis",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3313",
+    "alias": "2009/02/13/stimulus-long-run-were-all-broke",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3298",
+    "alias": "2009/02/13/two-capitols-two-melodramas",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3337",
+    "alias": "2009/02/14/solar-future-dims-despite-promise-stimulus",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3362",
+    "alias": "2009/02/16/lock-them-until-it-passes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3364",
+    "alias": "2009/02/17/airports-energy-and-facts",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3365",
+    "alias": "2009/02/17/greener-los-angeles-measure-b-advocates-without-explaining",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3363",
+    "alias": "2009/02/17/non-partisan-primary-catching-steam",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3386", "alias": "2009/02/18/budget-vote", "statusRest": 201 },
+  {
+    "idWebFlow": "3385",
+    "alias": "2009/02/18/california-styrofoam-ban",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "1147",
+    "alias": "2009/02/18/steve-peace-pushes-vote-open-primary-2010",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3390",
+    "alias": "2009/02/19/non-partisan-primary-deal",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3389",
+    "alias": "2009/02/19/statement-chairman-steve-peace-top-two-open-primary",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701168900,
+        "socket": 1665701168900,
+        "lookup": 1665701168901,
+        "connect": 1665701168972,
+        "secureConnect": 1665701169085,
+        "upload": 1665701169085,
+        "response": 1665701186265,
+        "end": 1665701186419,
+        "phases": {
+          "wait": 0,
+          "dns": 1,
+          "tcp": 71,
+          "tls": 113,
+          "request": 0,
+          "firstByte": 17180,
+          "download": 154,
+          "total": 17519
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "3387",
+    "alias": "2009/02/19/tightening-belt-across-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3388",
+    "alias": "2009/02/19/why-legislators-should-take-pay-cut-during-deficit",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3397",
+    "alias": "2009/02/20/california-sue-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3395",
+    "alias": "2009/02/20/furloughs-and-shutdowns-and-budgets-oh-my",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3391",
+    "alias": "2009/02/20/governor-hold-capitol-press-conference-discuss-passage-budget",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701221977,
+        "socket": 1665701221977,
+        "lookup": 1665701221978,
+        "connect": 1665701222051,
+        "secureConnect": 1665701222129,
+        "upload": 1665701222129,
+        "response": 1665701239690,
+        "end": 1665701239781,
+        "phases": {
+          "wait": 0,
+          "dns": 1,
+          "tcp": 73,
+          "tls": 78,
+          "request": 0,
+          "firstByte": 17561,
+          "download": 91,
+          "total": 17804
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "3396",
+    "alias": "2009/02/20/how-save-community-colleges-during-budget-crisis",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3398",
+    "alias": "2009/02/20/new-bill-education-finance-reform-cigarette-tax-budget-cuts-state-officials-durin",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3399",
+    "alias": "2009/02/20/nonpartisan-primaries-be-voted-may-ballot",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3400",
+    "alias": "2009/02/20/open-voter-registration",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3394",
+    "alias": "2009/02/22/editorial-california-budget-last-possible-bonus-open-primaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3402",
+    "alias": "2009/02/23/after-all-weve-been-through-and-nowa-drought",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3401",
+    "alias": "2009/02/23/unhitch-tax-hikes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3403",
+    "alias": "2009/02/24/california-gets-stimulatedor-does-it",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3404",
+    "alias": "2009/02/24/democrat-any-other-name-open-primaries-could-weaken-titles-strengthen-issues",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3415",
+    "alias": "2009/02/25/primary-colors-are-better-colorful-primaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3406",
+    "alias": "2009/02/25/watering-down",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3405",
+    "alias": "2009/02/25/why-and-how-reform-ballot-initiative-system",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3408",
+    "alias": "2009/02/26/can-stimulus-package-boost-green-economy",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3412",
+    "alias": "2009/02/26/what-people-are-saying-about-%e2%80%9ctop-two%e2%80%9d-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3413",
+    "alias": "2009/02/26/why-california-needs-top-two-candidates-open-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3414",
+    "alias": "2009/02/27/why-open-primaries-will-benefit-californians",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3417",
+    "alias": "2009/03/01/debate-over-legalization",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3416",
+    "alias": "2009/03/01/restoring-actual-majority-rule-sacramento",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3418",
+    "alias": "2009/03/01/succession-no-not-really",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3419", "alias": "2009/03/02/fools-rush", "statusRest": 201 },
+  {
+    "idWebFlow": "3421",
+    "alias": "2009/03/03/open-primary-would-it-be-more-or-less-democratic",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3423",
+    "alias": "2009/03/04/blazing-trail",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3422",
+    "alias": "2009/03/04/field-pole-bi-partisan-support-open-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3424",
+    "alias": "2009/03/05/poll-finds-most-californians-support-non-partisan-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3425",
+    "alias": "2009/03/06/what-about-blue-dogs",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3429",
+    "alias": "2009/03/09/california-and-cap-and-trade",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3430",
+    "alias": "2009/03/10/legally-erasing-stigmas-about-medical-marijuana",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3431",
+    "alias": "2009/03/10/open-primary-totally-partisan",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3432",
+    "alias": "2009/03/11/water-today-gone-tomorrow",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3433",
+    "alias": "2009/03/12/can-you-spare-job-bud",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3434",
+    "alias": "2009/03/13/californias-caseload",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3435",
+    "alias": "2009/03/16/furlough-fridays-thing-past",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3436",
+    "alias": "2009/03/17/power-people",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3437",
+    "alias": "2009/03/18/house-much-did-you-say",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3438",
+    "alias": "2009/03/19/moderates-we-are-not",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3439",
+    "alias": "2009/03/19/we-work-hard-no-money",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3442",
+    "alias": "2009/03/21/california-business-kind-town",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3441",
+    "alias": "2009/03/21/new-deficit-budget",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3440",
+    "alias": "2009/03/21/san-francisco-new-hollywood",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3443", "alias": "2009/03/21/splitting", "statusRest": 201 },
+  {
+    "idWebFlow": "3444",
+    "alias": "2009/03/22/what-we-will-avoid-allowing-open-primaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3446",
+    "alias": "2009/03/23/pelosis-request-poses-danger-san-francisco-and-its-venerable-chronicle",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3445",
+    "alias": "2009/03/23/throw-away-key",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3447",
+    "alias": "2009/03/24/step-aside-florida-its-californias-turn",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3448",
+    "alias": "2009/03/25/do-you-hear-people-mutter",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3450",
+    "alias": "2009/03/27/first-they-came-bonuses",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3449",
+    "alias": "2009/03/27/orange-county-school-board-makes-mockery-brown-act",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3453",
+    "alias": "2009/03/29/energy-costs-rise",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3455",
+    "alias": "2009/03/29/poll-shows-californians-favoring-open-primaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3451",
+    "alias": "2009/03/29/prison-spending-age-recession",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3454",
+    "alias": "2009/03/29/receiver-or-thief",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3452",
+    "alias": "2009/03/29/sacramento-six",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3456",
+    "alias": "2009/03/30/californians-ready-constitutional-convention",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3457",
+    "alias": "2009/03/30/oakland-cop-slaying-should-spur-renewed-call-federal-assault-weapons-ban",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3458",
+    "alias": "2009/03/31/he-wont-be-back",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3459",
+    "alias": "2009/04/03/first-lady-speaking-uc-merced",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3460",
+    "alias": "2009/04/03/most-special-election-ballot-measures-trouble",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3462",
+    "alias": "2009/04/05/californians-less-sure-about-changing-budget-vote-requirement",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3463",
+    "alias": "2009/04/05/legislate-google-earth",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3465",
+    "alias": "2009/04/05/lottery-modernization-act-less-modern-you-might-think",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3466",
+    "alias": "2009/04/05/should-we-really-sink-400-million-san-quentin",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3461",
+    "alias": "2009/04/05/special-rejection",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3464",
+    "alias": "2009/04/06/high-speed-rail-almost-within-our-collective-grasp",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3467",
+    "alias": "2009/04/06/why-journalism-still-matters-our-state-and-our-country",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3469",
+    "alias": "2009/04/07/leading-way-health-care",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3468",
+    "alias": "2009/04/07/so-it-flooding-or-drying",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3470",
+    "alias": "2009/04/08/we-didnt-have-budget-they-had-ideas",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3472", "alias": "2009/04/13/aw-nuts", "statusRest": 201 },
+  {
+    "idWebFlow": "3473",
+    "alias": "2009/04/13/giving-desalination-chance",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3471", "alias": "2009/04/13/leaders-tax", "statusRest": 201 },
+  {
+    "idWebFlow": "3476",
+    "alias": "2009/04/14/below-curve-education",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3477",
+    "alias": "2009/04/14/gays-and-independents",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3474",
+    "alias": "2009/04/14/water-water-every-er-nowhere",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3475",
+    "alias": "2009/04/14/you-say-tomato-i-say-bad-idea",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3478",
+    "alias": "2009/04/15/schwarzenegger-brown-hit-road-promote-passage-props-1a-through-1f",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3479",
+    "alias": "2009/04/15/what-would-you-do-50-billion",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3480",
+    "alias": "2009/04/16/pols-line-oppose-expansion-offshore-oil-drilling",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3481",
+    "alias": "2009/04/16/tea-parties-make-splash",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3484",
+    "alias": "2009/04/17/ab-23-could-expand-health-care-more-unemployed-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3486",
+    "alias": "2009/04/17/golden-state-high-speed-rail-gets-boost-president",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3482",
+    "alias": "2009/04/17/revisiting-amber-alert-guidelines",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3483",
+    "alias": "2009/04/17/sales-tax-increase",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3485",
+    "alias": "2009/04/17/whos-killing-electric-train",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3487",
+    "alias": "2009/04/20/senator-introduces-energy-ideas",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3489",
+    "alias": "2009/04/21/newsom-running-governor",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3488",
+    "alias": "2009/04/21/will-new-bill-weaken-public-records-act",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3491",
+    "alias": "2009/04/22/bring-business-back-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3490",
+    "alias": "2009/04/22/caivp-analysis-reveals-facts-san-diego-airport-expenses",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701276178,
+        "socket": 1665701276178,
+        "lookup": 1665701276180,
+        "connect": 1665701276254,
+        "secureConnect": 1665701276327,
+        "upload": 1665701276328,
+        "response": 1665701289648,
+        "end": 1665701289814,
+        "phases": {
+          "wait": 0,
+          "dns": 2,
+          "tcp": 74,
+          "tls": 73,
+          "request": 1,
+          "firstByte": 13320,
+          "download": 166,
+          "total": 13636
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "3492",
+    "alias": "2009/04/22/men-emissions",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3493",
+    "alias": "2009/04/22/nrcc-launches-robocalls-against-house-democrats",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3495",
+    "alias": "2009/04/25/buchanan-follows-garamendi-fray-10-cd",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3494",
+    "alias": "2009/04/25/salmon-fishermen-face-more-setbacks",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3496",
+    "alias": "2009/04/27/what-prop-1f-could-mean-california-politics",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3501",
+    "alias": "2009/04/28/anthony-woods-joins-cd-10-race",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3499",
+    "alias": "2009/04/28/borderline-enforcement-disorder",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3498",
+    "alias": "2009/04/28/cal-dems-reject-prop-1a-over-weekend",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3500",
+    "alias": "2009/04/28/epa-officials-finally-come-their-senses-global-warming",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3502",
+    "alias": "2009/04/30/california-counties-no-longer-funding-healthcare-undocumented-immigrants",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3503",
+    "alias": "2009/04/30/food-stamps-all",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3505",
+    "alias": "2009/04/30/need-cap-and-trade",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3504",
+    "alias": "2009/04/30/they-work-hard-our-money",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3507",
+    "alias": "2009/05/01/attorney-general-and-lawmaker-put-records-act-bill-slow-track",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3509",
+    "alias": "2009/05/01/ca-car-buyers-protection-act-protection-or-red-tape",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3510",
+    "alias": "2009/05/01/college-anyone",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3508",
+    "alias": "2009/05/01/special-ed-props-1e-and-1d",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3506",
+    "alias": "2009/05/01/universal-healthcare-coming-california-near-you",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3511",
+    "alias": "2009/05/03/governor-legislatures-popularity-numbers-sink-historic-new-lows",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3512",
+    "alias": "2009/05/03/what-garamendis-absence-means-gubernatorial-race",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3513",
+    "alias": "2009/05/05/california-and-swine-flu",
+    "statusRest": 201
+  },
+  { "idWebFlow": "3515", "alias": "2009/05/06/call-sick", "statusRest": 201 },
+  {
+    "idWebFlow": "3514",
+    "alias": "2009/05/06/garamendi-leads-first-poll-race-cd-10",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3516",
+    "alias": "2009/05/07/congratulations-now-what-lack-financial-aid",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3517",
+    "alias": "2009/05/12/california-marijuana-hate-sin-and-tax-sinner",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3519",
+    "alias": "2009/05/12/eastwest-divide-gay-marriage",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3518",
+    "alias": "2009/05/12/green-party-calls-may-19-ballot-propositions-rotten-deal",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3520",
+    "alias": "2009/05/12/long-road-california-republicans",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3521",
+    "alias": "2009/05/13/gay-marriage-group-begins-statewide-ad-campaign",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3523",
+    "alias": "2009/05/13/labeling-business-punishing-individuals",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3522",
+    "alias": "2009/05/13/yes-means-no-game-continues",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3525",
+    "alias": "2009/05/15/does-not-compute",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3526",
+    "alias": "2009/05/15/month-later-stark-remains-hospitalized-dc",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3524",
+    "alias": "2009/05/15/survey-shows-may-19-propositions-deep-trouble",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3527",
+    "alias": "2009/05/18/vote-or-not-vote-there-no-question",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3539",
+    "alias": "2009/05/20/dems-worried-governor-wants-break-oil-drilling-moratorium",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3543",
+    "alias": "2009/05/20/imperial-county-scouting-shoot-first",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3544",
+    "alias": "2009/05/20/new-video-game-laws-not-now-please",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3538",
+    "alias": "2009/05/20/nimby-thinking-everywhere",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3545",
+    "alias": "2009/05/20/now-what-do-we-do",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3542",
+    "alias": "2009/05/20/obama-administration-embraces-california-greenhouse-emissions-standards",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3540",
+    "alias": "2009/05/20/they-us-they-really-really-us",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3541",
+    "alias": "2009/05/20/we-may-scratch-your-back-if-our-friends-are-okay",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3546",
+    "alias": "2009/05/21/business-leaders-launch-effort-hold-rare-state-constitutional-convention",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3547",
+    "alias": "2009/05/21/revenge-rational-ignorance",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3548",
+    "alias": "2009/05/21/tax-hikes-fully-rejected-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3549",
+    "alias": "2009/05/25/bills-strengthen-state-sunshine-laws-approved-senate-judiciary-committee",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3553",
+    "alias": "2009/05/25/cal-supreme-court-says-tuesday-day-prop-8",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3550",
+    "alias": "2009/05/25/court-pitches-closing",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3551",
+    "alias": "2009/05/25/has-obama-turned-his-back-home-care-worker-who-helped-get-him-elected",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3554",
+    "alias": "2009/05/25/veterans-perspective-memorial-day",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3552",
+    "alias": "2009/05/26/cafe-not-so-brilliant",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3556",
+    "alias": "2009/05/26/democratic-leaders-respond-supreme-courts-prop-8-ruling",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3555",
+    "alias": "2009/05/26/now-lets-all-go-home",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3557",
+    "alias": "2009/05/27/perata-cleared-federal-corruption-probe",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3559",
+    "alias": "2009/05/28/health-insurance-costs-pay-now-or-pay-later",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3558",
+    "alias": "2009/05/28/outsourcing-our-health",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3560",
+    "alias": "2009/05/28/same-sex-marriage-proponents-vow-repeal-prop-8-2010",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3561",
+    "alias": "2009/05/30/california-speaker-cant-find-cooperation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3563",
+    "alias": "2009/06/05/attorney-general-vs-predatory-lenders",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3566",
+    "alias": "2009/06/06/gov-schwarzenegger’s-speech",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3568",
+    "alias": "2009/06/06/loophole-med-marijuana-dispensaries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3569",
+    "alias": "2009/06/07/seiu-disappointed-govs-speech",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3603",
+    "alias": "2009/06/09/derivatives-bubble-concerns-state-treasurer",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3628",
+    "alias": "2009/06/12/fair-elections-pilot-project",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3663",
+    "alias": "2009/06/19/thumbs-sd-airport-expansion",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3679",
+    "alias": "2009/06/25/budget-update-state-ious",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3677",
+    "alias": "2009/06/25/independent-decision",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3698",
+    "alias": "2009/06/30/california-worst-credit-rating-country",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3717",
+    "alias": "2009/07/02/internet-sales-tax-ab-178-0",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3762",
+    "alias": "2009/07/08/california-guns",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3785",
+    "alias": "2009/07/13/state-universities-struggle",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3796",
+    "alias": "2009/07/15/third-party-advocates-opposing-top-two",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3797",
+    "alias": "2009/07/16/legalizing-marijuana-could-generate-14-billion-tax-revenues",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3830",
+    "alias": "2009/07/27/gov-davis-highlights-non-partisan-primary-and-ca-budget-woes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3832",
+    "alias": "2009/08/03/if-you-thought-healthcare-was-great-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3907",
+    "alias": "2009/08/18/paying-attention-california-water-crisis",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3910",
+    "alias": "2009/08/22/federal-court-rules-non-partisan-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3945",
+    "alias": "2009/09/02/journalist-pay-your-own-primary-gop",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3947",
+    "alias": "2009/09/03/green-training-lack-green",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3983",
+    "alias": "2009/09/07/4000-green-jobs-coming-fremont",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4002",
+    "alias": "2009/09/11/arnold-starts-online-suggestion-box",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3999",
+    "alias": "2009/09/11/public-policy-poll-puts-californians-test",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4008",
+    "alias": "2009/09/14/medias-image-takes-another-hit",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4015",
+    "alias": "2009/09/16/mandatory-vaccinations",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4027",
+    "alias": "2009/09/18/meg-whitman-presents-her-vision",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4043",
+    "alias": "2009/09/23/exhaustive-poll-reveals-critical-data-nonpartisan-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4068",
+    "alias": "2009/10/02/free-equal-press-release-rebuts-top-two-open-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4067",
+    "alias": "2009/10/02/paul-jacob-rails-against-california-open-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4122",
+    "alias": "2009/10/22/california-job-loss-contradicts-stimulus-prediction",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4143",
+    "alias": "2009/10/30/culture-corruption",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4159",
+    "alias": "2009/11/04/chelene-nightingale-forgotten-gubernatorial-candidate",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4201",
+    "alias": "2009/11/17/winds-change",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4211",
+    "alias": "2009/11/20/bigger-picture-uc-tuition-hike",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4215",
+    "alias": "2009/11/23/politics-usual",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4214",
+    "alias": "2009/11/23/university-california-protests",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4216",
+    "alias": "2009/11/23/water-change-we-need",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4217",
+    "alias": "2009/11/24/dont-tax-success",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4228",
+    "alias": "2009/11/25/rise-recall-0",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4226",
+    "alias": "2009/11/25/special-interests-will-hold-parties-back-reaching-out-independents",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4233",
+    "alias": "2009/11/26/cap-and-trade-good-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4236",
+    "alias": "2009/11/29/tax-trouble-california",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4235",
+    "alias": "2009/11/29/top-two-primary-invites-open-competition",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701411984,
+        "socket": 1665701411985,
+        "lookup": 1665701411987,
+        "connect": 1665701412061,
+        "secureConnect": 1665701412138,
+        "upload": 1665701412138,
+        "response": 1665701433155,
+        "end": 1665701433306,
+        "phases": {
+          "wait": 1,
+          "dns": 2,
+          "tcp": 74,
+          "tls": 77,
+          "request": 0,
+          "firstByte": 21017,
+          "download": 151,
+          "total": 21322
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "4239",
+    "alias": "2009/11/30/tea-party-co-founder-blasts-mainstream-gop-imitators",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4249",
+    "alias": "2009/12/02/how-else-can-california-tax-shoppers",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4248",
+    "alias": "2009/12/02/remember-cal-states",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4247",
+    "alias": "2009/12/02/war-speech-may-have-set-stage-3rd-party",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4259",
+    "alias": "2009/12/04/californians-engaging-health-care-debate",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4258",
+    "alias": "2009/12/04/fencing-rule-law",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4260",
+    "alias": "2009/12/05/early-release-prisoners-not-prison-reform",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701451629,
+        "socket": 1665701451629,
+        "lookup": 1665701451631,
+        "connect": 1665701451722,
+        "secureConnect": 1665701451812,
+        "upload": 1665701451813,
+        "response": 1665701462957,
+        "end": 1665701463094,
+        "phases": {
+          "wait": 0,
+          "dns": 2,
+          "tcp": 91,
+          "tls": 90,
+          "request": 1,
+          "firstByte": 11144,
+          "download": 137,
+          "total": 11465
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "4262",
+    "alias": "2009/12/07/constitutional-lesson-pearl-harbor",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4261",
+    "alias": "2009/12/07/get-rid-san-diegos-airport-authority",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701459676,
+        "socket": 1665701459676,
+        "lookup": 1665701459677,
+        "connect": 1665701459750,
+        "secureConnect": 1665701459824,
+        "upload": 1665701459825,
+        "response": 1665701472604,
+        "end": 1665701472767,
+        "phases": {
+          "wait": 0,
+          "dns": 1,
+          "tcp": 73,
+          "tls": 74,
+          "request": 1,
+          "firstByte": 12779,
+          "download": 163,
+          "total": 13091
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "4268",
+    "alias": "2009/12/07/reform-group-proposes-ten-new-tax-hikes",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4263",
+    "alias": "2009/12/07/replacing-one-climate-hysteria-another",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4271",
+    "alias": "2009/12/08/divorce-ban-protects-marriage-it-or-not",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4272",
+    "alias": "2009/12/08/do-we-say-not-we-do",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4270",
+    "alias": "2009/12/08/schwarzeneggers-recycling-fail-betrays-his-conservative-hard-line",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4273",
+    "alias": "2009/12/08/tea-party-destiny",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4269",
+    "alias": "2009/12/08/term-limits-argument-firing-everybody",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4275",
+    "alias": "2009/12/09/pandemic-closures",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "3411",
+    "alias": "2009/12/12/california-top-two-candidates-open-primary-initiative-questions-and-answers",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701457945,
+        "socket": 1665701457945,
+        "lookup": 1665701457947,
+        "connect": 1665701458019,
+        "secureConnect": 1665701458092,
+        "upload": 1665701458093,
+        "response": 1665701470955,
+        "end": 1665701471121,
+        "phases": {
+          "wait": 0,
+          "dns": 2,
+          "tcp": 72,
+          "tls": 73,
+          "request": 1,
+          "firstByte": 12862,
+          "download": 166,
+          "total": 13176
+        }
+      }
+    }
+  },
+  {
+    "idWebFlow": "4285",
+    "alias": "2009/12/13/debate-not-vandalism-address-university-budget",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4287",
+    "alias": "2009/12/13/still-not-clear",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4292",
+    "alias": "2009/12/15/closer-look-gop-giant",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4295",
+    "alias": "2009/12/16/congresss-irritable-earmarks",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4299",
+    "alias": "2009/12/17/debate-heats-over-top-two-primary",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4302",
+    "alias": "2009/12/17/schwarzenegger-republican-climate-protector",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4303",
+    "alias": "2009/12/17/will-schwarzenegger-lose-line-item-veto",
+    "statusRest": 201
+  },
+  { "idWebFlow": "4306", "alias": "2009/12/21/upset-2010", "statusRest": 201 },
+  {
+    "idWebFlow": "4312",
+    "alias": "2009/12/23/8-billion-or-else",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4314",
+    "alias": "2009/12/23/governors-medicaid-worries",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4313",
+    "alias": "2009/12/23/theyre-not-fooling-anyone",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4315",
+    "alias": "2009/12/24/we-need-green-new-deal",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4318",
+    "alias": "2009/12/28/china-california-down",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4321",
+    "alias": "2009/12/28/marijuana-legalization-and-federalism",
+    "statusRest": 999,
+    "error": {
+      "name": "HTTPError",
+      "code": "ERR_NON_2XX_3XX_RESPONSE",
+      "timings": {
+        "start": 1665701462755,
+        "socket": 1665701462755,
+        "lookup": 1665701462756,
+        "connect": 1665701462829,
+        "secureConnect": 1665701462902,
+        "upload": 1665701462902,
+        "response": 1665701477096,
+        "end": 1665701477265,
+        "phases": {
+          "wait": 0,
+          "dns": 1,
+          "tcp": 73,
+          "tls": 73,
+          "request": 0,
+          "firstByte": 14194,
+          "download": 169,
+          "total": 14510
+        }
+      }
+    }
+  },
+  { "idWebFlow": "4319", "alias": "2009/12/28/mass-exodus", "statusRest": 201 },
+  {
+    "idWebFlow": "4322",
+    "alias": "2009/12/29/independent-voters-could-decide-2010-elections",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4334",
+    "alias": "2009/12/30/dreamin-freedom-golden-state",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4335",
+    "alias": "2009/12/30/spark-innovation",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4337",
+    "alias": "2009/12/31/2nd-american-revolution-its-way",
+    "statusRest": 201
+  },
+  {
+    "idWebFlow": "4339",
+    "alias": "2009/12/31/latest-scientific-study-co2-emissions",
+    "statusRest": 201
+  }
+]
